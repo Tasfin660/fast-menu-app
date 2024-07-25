@@ -4,7 +4,7 @@ import AppError from '../common/AppError';
 const Home = () => {
 	const { authState } = useAuth();
 
-	if (!authState)
+	if (!authState())
 		return (
 			<AppError
 				src="/user-none-big.png"

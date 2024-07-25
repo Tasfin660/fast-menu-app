@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createContext, useContext, useReducer } from 'react';
+import { useCookies } from 'react-cookie';
 import type {
 	Action,
 	AuthType,
@@ -13,15 +14,18 @@ const AuthContext = createContext<undefined | (ContextType & AuthType)>(
 	undefined
 );
 
+const initialUser = {
+	username: 'User Avocado',
+	image: '/user-none.png',
+	role: 'user',
+	menu_list: [],
+	joined: ''
+};
+
 const initialState = {
-	user: {
-		username: 'User Avocado',
-		image: '/user-none.png',
-		role: 'user',
-		menu_list: [],
-		joined: ''
-	},
-	authState: false,
+	user: localStorage.getItem('user')
+		? JSON.parse(localStorage.getItem('user') || '')
+		: initialUser,
 	authStatus: {
 		name: '',
 		message: ''
@@ -30,35 +34,30 @@ const initialState = {
 
 const reducer = (state: AuthType, action: Action) => {
 	switch (action.type) {
-		case 'auth/loading':
-			return {
-				...state,
-				authStatus: action.payload
-			};
 		case 'auth/register':
 			return { ...state, authStatus: action.payload };
 		case 'auth/login':
-			return { ...state, authState: true, user: action.payload };
+			return { ...state, user: action.payload };
 		case 'auth/logout':
-			return { ...state };
+			return { ...state, user: initialUser };
 		case 'auth/error':
 			return { ...state, authStatus: action.payload };
 		case 'auth/status/reset':
-			return { ...state, authStatus: action.payload };
+			return { ...state, authStatus: { name: '', message: '' } };
 		default:
 			throw new Error('Action unknown');
 	}
 };
 
 const AuthProvider = ({ children }: Children) => {
-	const [{ user, authState, authStatus }, dispatch] = useReducer(
-		reducer,
-		initialState
-	);
+	const [cookies, setCookie, removeCookie] = useCookies(['authToken']);
+	const [{ user, authStatus }, dispatch] = useReducer(reducer, initialState);
 
 	const register = async (data: RegisterType) => {
 		try {
-			dispatch({ type: 'auth/loading', payload: { name: '', message: '' } });
+			dispatch({
+				type: 'auth/status/reset'
+			});
 			await axios.post(`${import.meta.env.VITE_BASE_URL}/auth/register`, data);
 			dispatch({
 				type: 'auth/register',
@@ -81,12 +80,16 @@ const AuthProvider = ({ children }: Children) => {
 
 	const login = async (data: LoginType) => {
 		try {
-			dispatch({ type: 'auth/loading', payload: { name: '', message: '' } });
+			dispatch({
+				type: 'auth/status/reset'
+			});
 			const res = await axios.post(
 				`${import.meta.env.VITE_BASE_URL}/auth/login`,
 				data
 			);
-			dispatch({ type: 'auth/login', payload: res.data.loggedInUser });
+			dispatch({ type: 'auth/login', payload: res.data.userInfo });
+			setCookie('authToken', res.data.token, { path: '/' });
+			localStorage.setItem('user', JSON.stringify(res.data.userInfo));
 		} catch (err) {
 			dispatch({
 				type: 'auth/error',
@@ -99,12 +102,19 @@ const AuthProvider = ({ children }: Children) => {
 		}
 	};
 
-	const logout = () => {};
+	const logout = () => {
+		dispatch({ type: 'auth/logout' });
+		removeCookie('authToken', { path: '/' });
+		localStorage.setItem('user', JSON.stringify(initialUser));
+	};
+
+	const authState = () => {
+		return !!cookies.authToken;
+	};
 
 	const resetAuthStatus = () => {
 		dispatch({
-			type: 'auth/status/reset',
-			payload: { name: '', message: '' }
+			type: 'auth/status/reset'
 		});
 	};
 
@@ -112,10 +122,11 @@ const AuthProvider = ({ children }: Children) => {
 		<AuthContext.Provider
 			value={{
 				user,
-				authState,
 				authStatus,
-				login,
 				register,
+				login,
+				logout,
+				authState,
 				resetAuthStatus
 			}}>
 			{children}

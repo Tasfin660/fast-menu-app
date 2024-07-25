@@ -30,7 +30,8 @@ export default {
 			},
 			boxShadow: {
 				'shadow-primary': 'var(--box-shadow-primary)',
-				'shadow-app': 'var(--box-shadow-app)'
+				'shadow-app': 'var(--box-shadow-app)',
+				'shadow-menu': 'var(--box-shadow-menu)'
 			}
 		}
 	},

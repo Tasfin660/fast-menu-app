@@ -7,7 +7,7 @@ const Add = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		if (!authState) navigate('/unauthorized', { replace: true });
+		if (!authState()) navigate('/unauthorized', { replace: true });
 	}, [authState, navigate]);
 
 	return <div>Add</div>;

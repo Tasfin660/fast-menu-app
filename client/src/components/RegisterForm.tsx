@@ -23,7 +23,7 @@ const RegisterForm = () => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		if (authState) navigate('/', { replace: true });
+		if (authState()) navigate('/', { replace: true });
 	}, [authState, navigate]);
 
 	const {

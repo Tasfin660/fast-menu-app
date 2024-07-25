@@ -25,24 +25,24 @@ interface Children {
 }
 
 interface ContextType {
-	login: (data: LoginType) => void;
 	register: (data: RegisterType) => void;
+	login: (data: LoginType) => void;
+	logout: () => void;
+	authState: () => boolean;
 	resetAuthStatus: () => void;
 }
 
 interface AuthType {
 	user: User;
-	authState: boolean;
 	authStatus: { name: string; message: string };
 }
 
 type Action =
-	| { type: 'auth/loading'; payload: { name: string; message: string } }
 	| { type: 'auth/register'; payload: { name: string; message: string } }
 	| { type: 'auth/login'; payload: User }
 	| { type: 'auth/logout' }
 	| { type: 'auth/error'; payload: { name: string; message: string } }
-	| { type: 'auth/status/reset'; payload: { name: string; message: string } };
+	| { type: 'auth/status/reset' };
 
 export type {
 	Action,

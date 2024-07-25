@@ -60,14 +60,14 @@ const login = async (req, res) => {
     }
 
     const token = jwt.sign({ id: user['_id'] }, process.env.JWTTOKEN);
-    const loggedInUser = {
+    const userInfo = {
       username: user.username,
       image: user.image,
       role: user.role,
       menu_list: user.menu_list,
       joined: user.joined,
     };
-    res.json({ token, loggedInUser });
+    res.json({ token, userInfo });
   } catch (err) {
     if (err.message === 'not-exist')
       res.status(409).json({
