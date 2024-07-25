@@ -1,0 +1,10 @@
+[
+	{
+		"name": "Cheese Burger",
+		"image": "/burger.png",
+		"brand": "KFC",
+		"category": "burgers",
+		"rate": 3,
+		"price": 2.39
+	}
+]
