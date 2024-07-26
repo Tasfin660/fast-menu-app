@@ -37,3 +37,18 @@
 		transform: rotate(1turn);
 	}
 }
+
+/* *Smooth rendering */
+.smooth-rendering {
+	animation: smooth-render 0.5s ease-in;
+}
+
+@keyframes smooth-render {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

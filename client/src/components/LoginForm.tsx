@@ -50,7 +50,8 @@ const LoginForm = () => {
 					placeholder="Username"
 					autoComplete="off"
 					{...registerInput('username')}
-					value="user_avocado"
+					// value="user_avocado"
+					value="tasfin660"
 					className="w-80 rounded-full border-[1px] border-transparent bg-neutral-100 py-2 pl-4 pr-10 shadow-shadow-app outline-none duration-300 hover:bg-neutral-50 focus:border-primary"
 				/>
 				<FaUser className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-neutral-300" />
@@ -61,7 +62,8 @@ const LoginForm = () => {
 					placeholder="Password"
 					autoComplete="off"
 					{...registerInput('password')}
-					value="iamavocado"
+					// value="iamavocado"
+					value="heart-under-blade-500"
 					className="w-80 rounded-full border-[1px] border-transparent bg-neutral-100 py-2 pl-4 pr-10 shadow-shadow-app outline-none duration-300 hover:bg-neutral-50 focus:border-primary"
 				/>
 				<FaLock className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-neutral-300" />
