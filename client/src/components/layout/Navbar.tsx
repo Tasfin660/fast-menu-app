@@ -3,6 +3,7 @@ import { IoLogIn, IoLogOut } from 'react-icons/io5';
 import { MdOutlineBookmarkAdd } from 'react-icons/md';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import { IoIosCheckmarkCircle, IoIosCloseCircle } from 'react-icons/io';
 
 const Navbar = () => {
 	const { user, logout, authState } = useAuth();
@@ -16,12 +17,27 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className="col-start-2 col-end-3 flex items-center justify-between rounded-full p-2 pr-4 shadow-shadow-app">
+		<nav className="col-start-2 col-end-3 flex items-center justify-between overflow-hidden rounded-full p-2 pr-4 shadow-shadow-app">
 			<figure className="flex items-center">
 				<img src={image} alt="user" className="w-10 rounded-full" />
 				<figcaption className="ml-4 mr-2 font-medium">{username}</figcaption>
 				{role === 'admin' && <FaCrown className="text-sm text-secondary" />}
 			</figure>
+			<div className="nav-noti flex items-center gap-1">
+				<p>
+					Proceed to delete&nbsp;
+					<span className="font-font-secondary font-semibold text-secondary">
+						Cheese Burger
+					</span>
+					?
+				</p>
+				<button className="ml-1 text-2xl text-primary duration-300 hover:text-primary-dark">
+					<IoIosCloseCircle />
+				</button>
+				<button className="text-2xl text-emerald-400 duration-300 hover:text-emerald-500">
+					<IoIosCheckmarkCircle />
+				</button>
+			</div>
 			<div className="flex items-center gap-4">
 				{authState() ? (
 					<>

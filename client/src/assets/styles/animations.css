@@ -52,3 +52,19 @@
 		opacity: 1;
 	}
 }
+
+.nav-noti {
+	animation: nav-noti 0.5s ease-in;
+}
+
+@keyframes nav-noti {
+	0% {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 100;
+	}
+}
