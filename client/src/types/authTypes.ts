@@ -1,5 +1,9 @@
 import { ReactNode } from 'react';
 
+interface Children {
+	children: ReactNode;
+}
+
 interface User {
 	username: string;
 	image: string;
@@ -18,10 +22,6 @@ interface RegisterType {
 interface LoginType {
 	username: string;
 	password: string;
-}
-
-interface Children {
-	children: ReactNode;
 }
 
 interface ContextType {

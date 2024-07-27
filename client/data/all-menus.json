@@ -1,10 +1,152 @@
 [
 	{
-		"name": "Cheese Burger",
-		"image": "/burger.png",
-		"brand": "KFC",
-		"category": "burgers",
+		"category": "burger",
+		"name": "Grander",
+		"image": "https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/Rok2023grafika/NowaGrafikaProduktowa/grander_NEW240.png",
+		"price": 7.34,
+		"tag": "Pl-KFC",
+		"poeple": 1,
 		"rate": 3,
-		"price": 2.39
+		"likes": 1
+	},
+	{
+		"category": "burger",
+		"name": "Double Grander",
+		"image": "https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/Rok2023grafika/NowaGrafikaProduktowa/grander_podwojny_NEW240.png",
+		"price": 8.61,
+		"tag": "Pl-KFC",
+		"poeple": 1,
+		"rate": 3,
+		"likes": 1
+	},
+	{
+		"category": "burger",
+		"name": "Gold Grander",
+		"image": "https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/Rok2023grafika/NowaGrafikaProduktowa/kentucky_NEW240.png",
+		"price": 7.6,
+		"tag": "Pl-KFC",
+		"poeple": 1,
+		"rate": 3,
+		"likes": 1
+	},
+	{
+		"category": "burger",
+		"name": "Zinger Burger",
+		"image": "https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/Rok2023grafika/NowaGrafikaProduktowa/zinger_NEW_240.png",
+		"price": 5.82,
+		"tag": "Pl-KFC",
+		"poeple": 1,
+		"rate": 3,
+		"likes": 1
+	},
+	{
+		"category": "burger",
+		"name": "Double Zinger",
+		"image": "https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/Rok2023grafika/NowaGrafikaProduktowa/zinger_NEW_240.png",
+		"price": 7.6,
+		"tag": "Pl-KFC",
+		"poeple": 1,
+		"rate": 3,
+		"likes": 1
+	},
+	{
+		"category": "burger",
+		"name": "California Burger",
+		"image": "https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/2024_grafika/California_Summer_2024/Burger%20240x240.png",
+		"price": 7.19,
+		"tag": "Pl-KFC",
+		"poeple": 1,
+		"rate": 2.5,
+		"likes": 1
+	},
+	{
+		"category": "french-fries",
+		"name": "Large Fries",
+		"image": "https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/Images/Web/dodatki/duze_frytki.png",
+		"price": 2.53,
+		"tag": "Pl-KFC",
+		"poeple": 1,
+		"rate": 2.5,
+		"likes": 1
+	},
+	{
+		"category": "drinks",
+		"name": "Green Apple",
+		"image": "https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/2024_grafika/Bubbles%202024/KFC%20BoubbleTea_L_Apple_240x240_PL.png",
+		"price": 4.31,
+		"tag": "Pl-KFC",
+		"poeple": 1,
+		"rate": 3,
+		"likes": 1
+	},
+	{
+		"category": "drinks",
+		"name": "Bubble Mango",
+		"image": "https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/2024_grafika/Bubbles%202024/KFC%20BoubbleTea_L_Mango_240x240_PL.png",
+		"price": 4.31,
+		"tag": "Pl-KFC",
+		"poeple": 1,
+		"rate": 3,
+		"likes": 1
+	},
+	{
+		"category": "drinks",
+		"name": "Halloumi Burger",
+		"image": "https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/Rok2023grafika/NowaGrafikaProduktowa/halloumi_burger_NEW240x240.png",
+		"price": 7.6,
+		"tag": "Pl-KFC",
+		"poeple": 1,
+		"rate": 1.5,
+		"likes": 1
+	},
+	{
+		"category": "drinks",
+		"name": "Strawberry Shake",
+		"image": "https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/2024_grafika/Bubbles%202024/Bubble_shakes_straw_240_1.png",
+		"price": 4.3,
+		"tag": "Pl-KFC",
+		"poeple": 1,
+		"rate": 3,
+		"likes": 1
+	},
+	{
+		"category": "drinks",
+		"name": "Peanut Shake",
+		"image": "https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/Rok2023grafika/Shakenowagrafika/Shake_duzy_peanut_240.png",
+		"price": 4.05,
+		"tag": "Pl-KFC",
+		"poeple": 1,
+		"rate": 2.5,
+		"likes": 1
+	},
+	{
+		"category": "drinks",
+		"name": "Chocolate Shake",
+		"image": "https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/Rok2023grafika/Shakenowagrafika/Shake_duzy_choco_240.png",
+		"price": 4.05,
+		"tag": "Pl-KFC",
+		"poeple": 1,
+		"rate": 3,
+		"likes": 1
+	},
+	{
+		"category": "fried-chicken",
+		"name": "Kentucky Chicken",
+		"image": "https://amrestcdn.azureedge.net/kfc-web-ordering/KFC/Images/Web/kurczaki/N%C3%B3%C5%BCka-K.png",
+		"price": 2.53,
+		"tag": "Pl-KFC",
+		"poeple": 1,
+		"rate": 3,
+		"likes": 1
+	},
+	{
+		"category": "burger",
+		"name": "Zinger Burger",
+		"image": "https://images.ctfassets.net/n4pc9wlortyn/1thXurAWckdDLX3bxStbc2/2cdb22c723fa384bdbf60dc18a07d973/Zinger_Burger_Burger_480x388.png?h=900&w=1200&fm=webp&fit=fill",
+		"price": 2.53,
+		"tag": "Th-KFC",
+		"poeple": 1,
+		"rate": 3,
+		"likes": 1
 	}
 ]

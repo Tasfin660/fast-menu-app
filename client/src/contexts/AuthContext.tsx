@@ -8,7 +8,7 @@ import type {
 	ContextType,
 	LoginType,
 	RegisterType
-} from '../types/authType';
+} from '../types/authTypes';
 
 const AuthContext = createContext<undefined | (ContextType & AuthType)>(
 	undefined
@@ -45,7 +45,7 @@ const reducer = (state: AuthType, action: Action) => {
 		case 'auth/status/reset':
 			return { ...state, authStatus: { name: '', message: '' } };
 		default:
-			throw new Error('Action unknown');
+			throw new Error('Action unknown!');
 	}
 };
 
@@ -136,6 +136,7 @@ const AuthProvider = ({ children }: Children) => {
 
 const useAuth = () => {
 	const context = useContext(AuthContext);
+
 	if (context === undefined)
 		throw new Error('AuthProvider was used outside the AuthProvider');
 	return context;

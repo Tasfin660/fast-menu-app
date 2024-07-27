@@ -1,12 +1,14 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { FaImage, FaLock, FaUser } from 'react-icons/fa';
+import { FaImage, FaLock, FaUser } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { useAuth } from '../contexts/AuthContext';
-import type { RegisterType } from '../types/authType';
-import AuthSpinner from './common/AuthSpinner';
-import { useEffect } from 'react';
+import type { RegisterType } from '../types/authTypes';
+import { AuthSpinner } from './common/AppSpinners';
+import { PrimaryBtn } from './common/Buttons';
+import HeadingPrimary from './common/HeadingPrimary';
 
 const schema = yup.object().shape({
 	username: yup.string().min(3).max(12).required('Username is required'),
@@ -46,9 +48,7 @@ const RegisterForm = () => {
 		<form
 			className="flex flex-col items-center gap-5"
 			onSubmit={handleSubmit(onSubmit)}>
-			<h1 className="font-font-secondary text-2xl font-semibold text-secondary">
-				Register
-			</h1>
+			<HeadingPrimary context="Register" />
 			<div className="relative">
 				<input
 					type="text"
@@ -89,15 +89,13 @@ const RegisterForm = () => {
 				/>
 				<FaLock className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-neutral-300" />
 			</div>
-			<p className="flex items-center gap-2 text-xs font-semibold italic text-red-600">
+			<p className="text-xs font-semibold italic text-red-600">
 				{inputErrors?.username?.message ||
 					inputErrors?.image?.message ||
 					inputErrors?.password?.message ||
 					inputErrors?.confirmPassword?.message}
 			</p>
-			<button className="rounded-full bg-primary px-3 py-1 text-text-light duration-300 hover:bg-primary-dark">
-				Join Now
-			</button>
+			<PrimaryBtn context="Join Now" />
 		</form>
 	);
 };
