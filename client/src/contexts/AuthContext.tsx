@@ -95,8 +95,7 @@ const AuthProvider = ({ children }: Children) => {
 				type: 'auth/error',
 				payload: err?.response?.data || {
 					name: 'Server Error!',
-					message:
-						'An error occurred while registering the user. Please try again later.'
+					message: 'An error occurred while logging in. Please try again later.'
 				}
 			});
 		}

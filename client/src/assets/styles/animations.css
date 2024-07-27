@@ -71,7 +71,7 @@
 
 /* Movedown animation */
 .menu-animation {
-	animation: menuAnimation 2s infinite;
+	animation: menuAnimation 1s infinite;
 }
 
 @keyframes menuAnimation {

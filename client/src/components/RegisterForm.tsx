@@ -37,8 +37,8 @@ const RegisterForm = () => {
 		resolver: yupResolver(schema)
 	});
 
-	const onSubmit = (data: RegisterType) => {
-		register(data);
+	const onSubmit = async (data: RegisterType) => {
+		await register(data);
 		reset();
 	};
 

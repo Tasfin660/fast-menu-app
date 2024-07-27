@@ -1,13 +1,14 @@
 import { IoMdHome } from 'react-icons/io';
 import { RiArrowRightSLine } from 'react-icons/ri';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import ToggleTheme from '../ToggleTheme';
 import { useMenu } from '../../contexts/MenuContext';
 
 const Header = () => {
 	const { menuId, authId } = useParams();
-	const { menus } = useMenu();
-	const length = menus.length;
+	const { pathname } = useLocation();
+	const { menu } = useMenu();
+	const length = menu.length;
 
 	return (
 		<header className="mb-2 flex items-center justify-between px-3">
@@ -22,8 +23,18 @@ const Header = () => {
 					</>
 				)}
 				{authId && <RiArrowRightSLine className="text-lg" />}
+				{pathname === '/menu/add-meal' && (
+					<>
+						<RiArrowRightSLine className="text-lg" />
+						<span>Menu</span>
+						<RiArrowRightSLine className="text-lg" />
+					</>
+				)}
 				<span className="capitalize">{authId}</span>
 				<span className="capitalize">{menuId}</span>
+				<span className="capitalize">
+					{pathname === '/menu/add-meal' && 'Add Meal'}
+				</span>
 			</div>
 			<div className="flex items-center gap-6">
 				<div className="header-message relative w-[400px] overflow-hidden text-nowrap rounded-full pb-1.5 pt-2 text-sm font-medium shadow-shadow-app">

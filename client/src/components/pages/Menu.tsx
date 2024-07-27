@@ -3,14 +3,14 @@ import { useParams } from 'react-router-dom';
 import { useMenu } from '../../contexts/MenuContext';
 import AppError from '../common/AppError';
 import { MenuSpinner } from '../common/AppSpinners';
-import Menu from '../Menu';
+import Meal from '../Meal';
 
-const Menus = () => {
+const Menu = () => {
 	const { menuId } = useParams();
-	const { menus, menuLoading, menuError, getMenus } = useMenu();
+	const { menu, menuLoading, menuError, getMenu } = useMenu();
 
 	useEffect(() => {
-		getMenus(menuId || '');
+		getMenu(menuId || '');
 	}, [menuId]);
 
 	if (menuLoading) return <MenuSpinner />;
@@ -24,7 +24,7 @@ const Menus = () => {
 			/>
 		);
 
-	if (menus.length === 0)
+	if (menu.length === 0)
 		return (
 			<AppError
 				src="/add-menu.png"
@@ -35,11 +35,11 @@ const Menus = () => {
 
 	return (
 		<main className="app-scrollbar shadow-shadowapp grid h-full grid-cols-[repeat(3,350px)] grid-rows-[max-content] items-start justify-between gap-y-9 overflow-y-scroll rounded-lg py-1 pl-3 pr-6">
-			{menus.map(menu => (
-				<Menu key={menu._id} menu={menu} />
+			{menu.map(meal => (
+				<Meal key={meal._id} meal={meal} />
 			))}
 		</main>
 	);
 };
 
-export default Menus;
+export default Menu;

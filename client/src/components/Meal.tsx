@@ -6,14 +6,14 @@ import { IoIosPricetag } from 'react-icons/io';
 import { MdPeopleAlt } from 'react-icons/md';
 import { TbTrashXFilled } from 'react-icons/tb';
 import { useAuth } from '../contexts/AuthContext';
-import type { Action, ItemType } from '../types/itemTypes';
-import type { Menu } from '../types/menuTypes';
+import { useMenu } from '../contexts/MenuContext';
+import type { Action, Meal, MealTypes } from '../types/mealTypes';
 
 const initialState = {
 	imgLoading: true
 };
 
-const reducer = (state: ItemType, action: Action) => {
+const reducer = (state: MealTypes, action: Action) => {
 	switch (action.type) {
 		case 'image/loaded':
 			return { ...state, imgLoading: false };
@@ -22,9 +22,10 @@ const reducer = (state: ItemType, action: Action) => {
 	}
 };
 
-const Menu = ({ menu }: { menu: Menu }) => {
+const Meal = ({ meal }: { meal: Meal }) => {
 	const { user, authState } = useAuth();
-	const { name, image, price, tag, people, rate, likes } = menu;
+	const { selectMeal } = useMenu();
+	const { _id, name, image, price, tag, people, rate, likes } = meal;
 	const [{ imgLoading }, dispatch] = useReducer(reducer, initialState);
 
 	return (
@@ -41,7 +42,7 @@ const Menu = ({ menu }: { menu: Menu }) => {
 					src={image}
 					alt={name}
 					className="px-8"
-					style={imgLoading ? { visibility: 'hidden' } : {}}
+					style={imgLoading ? { visibility: 'hidden', display: 'none' } : {}}
 					onLoad={() => dispatch({ type: 'image/loaded' })}
 				/>
 			</div>
@@ -75,7 +76,8 @@ const Menu = ({ menu }: { menu: Menu }) => {
 						</button>
 						<button
 							className="box-content rounded-full bg-primary px-2.5 py-2 text-text-light shadow-shadow-menu duration-300 hover:bg-primary-dark disabled:cursor-not-allowed disabled:bg-primary"
-							disabled={user.role !== 'admin'}>
+							disabled={user.role !== 'admin'}
+							onClick={() => selectMeal(_id || '', name)}>
 							<TbTrashXFilled />
 						</button>
 					</div>
@@ -85,4 +87,4 @@ const Menu = ({ menu }: { menu: Menu }) => {
 	);
 };
 
-export default Menu;
+export default Meal;

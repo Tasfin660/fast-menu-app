@@ -48,7 +48,7 @@ const Footer = () => {
 					<FaLink />
 				</a>
 			</div>
-			<p>
+			<p className="font-medium">
 				Copyright &copy; Tasfin Hasan | Fast Menu App {new Date().getFullYear()}
 				. All Rights Reserved.
 			</p>

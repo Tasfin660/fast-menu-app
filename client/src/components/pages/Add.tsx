@@ -17,7 +17,7 @@ const Add = () => {
 			<AddForm />
 			<div className="flex flex-col gap-1 pl-3">
 				<h1 className="col-span-2 -ml-3 mb-4 font-font-secondary text-2xl font-semibold">
-					Menu Adding Tips
+					Meal Adding Tips
 				</h1>
 				<Tip context="Use a profer name" />
 				<Tip context="Verify the image URL before adding" />
@@ -25,8 +25,9 @@ const Add = () => {
 				<Tip context="Add a tag for easy unique identification" />
 				<Tip context="Specify the number of people the meal can serve" />
 				<Tip context="Set the rating between 1 and 5" />
-				<Tip context="Remember to like your menu" />
+				<Tip context="Your meal will automatically receive 1 like" />
 				<Tip context="You must fill in every field before submitting" />
+				<Tip context="You need to log in first to add a meal." />
 			</div>
 		</div>
 	);
@@ -34,7 +35,7 @@ const Add = () => {
 
 const Tip = ({ context }: { context: string }) => {
 	return (
-		<p className="flex items-center gap-2 font-medium">
+		<p className="flex items-center gap-2">
 			<FaLongArrowAltRight className="text-xl text-secondary" />
 			{context}
 		</p>
