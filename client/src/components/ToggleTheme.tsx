@@ -20,7 +20,7 @@ const ToggleTheme = () => {
 				className={`z-10 ${theme === 'dark' && 'divide-red-300 text-text-light'}`}
 			/>
 			<span
-				className={`absolute top-1/2 z-[1] size-6 -translate-y-1/2 rounded-full bg-primary ${theme === 'light' ? 'left-[5%]' : 'left-[55%]'} transition-[left_transform] duration-300`}></span>
+				className={`absolute top-1/2 z-[1] size-6 -translate-y-1/2 rounded-full bg-primary-gradient ${theme === 'light' ? 'left-[5%]' : 'left-[55%]'} transition-[left_transform] duration-300`}></span>
 		</button>
 	);
 };

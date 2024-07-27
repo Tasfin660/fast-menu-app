@@ -18,7 +18,7 @@ const initialUser = {
 	username: 'User Avocado',
 	image: '/user-none.png',
 	role: 'user',
-	menu_list: [],
+	meal_list: [],
 	joined: ''
 };
 

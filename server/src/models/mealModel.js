@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const MenuSchema = mongoose.Schema({
+const MealSchema = mongoose.Schema({
   category: {
     type: String,
     required: true,
@@ -35,6 +35,6 @@ const MenuSchema = mongoose.Schema({
   },
 });
 
-const MenuModel = new mongoose.model('all-menu', MenuSchema, 'all-menu');
+const MealModel = new mongoose.model('all-meals', MealSchema);
 
-export default MenuModel;
+export default MealModel;

@@ -89,6 +89,17 @@
 }
 
 /* Header animations */
+.header-message::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	border-left: 15px solid var(--color-text-light);
+	border-right: 15px solid var(--color-text-light);
+}
+
 .header-message::before {
 	content: 'Welcome to the Fast-Menu App. Add your favorite items and enjoy! 🍕 🍟 🍾';
 	position: absolute;

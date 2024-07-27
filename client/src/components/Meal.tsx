@@ -33,7 +33,7 @@ const Meal = ({ meal }: { meal: Meal }) => {
 			<div className="relative flex items-center justify-center">
 				{imgLoading && (
 					<img
-						src="/fast-food.png"
+						src="/meal.png"
 						alt="fast food"
 						className="menu-animation w-16"
 					/>

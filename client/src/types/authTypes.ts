@@ -8,7 +8,7 @@ interface User {
 	username: string;
 	image: string;
 	role: string;
-	menu_list: string[];
+	meal_list: string[];
 	joined: string;
 }
 

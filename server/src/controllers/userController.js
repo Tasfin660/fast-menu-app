@@ -22,7 +22,7 @@ const register = async (req, res) => {
       username,
       image,
       role: 'user',
-      menu_list: [],
+      meal_list: [],
       joined: date,
       password: hashedPassword,
     });
@@ -64,7 +64,7 @@ const login = async (req, res) => {
       username: user.username,
       image: user.image,
       role: user.role,
-      menu_list: user.menu_list,
+      meal_list: user.meal_list,
       joined: user.joined,
     };
     res.json({ token, userInfo });

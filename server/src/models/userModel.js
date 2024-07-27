@@ -14,7 +14,7 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  menu_list: {
+  meal_list: {
     type: Array,
   },
   joined: {
