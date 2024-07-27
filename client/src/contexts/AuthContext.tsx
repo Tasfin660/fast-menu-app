@@ -15,6 +15,7 @@ const AuthContext = createContext<undefined | (ContextType & AuthType)>(
 );
 
 const initialUser = {
+	_id: '',
 	username: 'User Avocado',
 	image: '/user-none.png',
 	role: 'user',
@@ -44,6 +45,8 @@ const reducer = (state: AuthType, action: Action) => {
 			return { ...state, authStatus: action.payload };
 		case 'auth/status/reset':
 			return { ...state, authStatus: { name: '', message: '' } };
+		case 'user/meal/add':
+			return { ...state };
 		default:
 			throw new Error('Action unknown!');
 	}
@@ -117,6 +120,24 @@ const AuthProvider = ({ children }: Children) => {
 		});
 	};
 
+	const addMeal = async (mealId: string) => {
+		try {
+			await axios.patch(
+				`${import.meta.env.VITE_BASE_URL}/user/add-meal/${user._id}`,
+				{
+					mealId
+				}
+			);
+			dispatch({ type: 'user/meal/add', payload: mealId });
+		} catch (err) {
+			console.error(err?.data.message);
+		}
+	};
+
+	const removeMeal = async (_id: string) => {};
+
+	const getMealList = async () => {};
+
 	return (
 		<AuthContext.Provider
 			value={{
@@ -126,7 +147,10 @@ const AuthProvider = ({ children }: Children) => {
 				login,
 				logout,
 				authState,
-				resetAuthStatus
+				resetAuthStatus,
+				addMeal,
+				removeMeal,
+				getMealList
 			}}>
 			{children}
 		</AuthContext.Provider>

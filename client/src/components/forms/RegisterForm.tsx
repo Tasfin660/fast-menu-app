@@ -4,11 +4,11 @@ import { useForm } from 'react-hook-form';
 import { FaImage, FaLock, FaUser } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
-import { useAuth } from '../contexts/AuthContext';
-import type { RegisterType } from '../types/authTypes';
-import { AuthSpinner } from './common/AppSpinners';
-import { PrimaryBtn } from './common/Buttons';
-import HeadingPrimary from './common/HeadingPrimary';
+import { useAuth } from '../../contexts/AuthContext';
+import type { RegisterType } from '../../types/authTypes';
+import { AuthSpinner } from '../common/AppSpinners';
+import { PrimaryBtn } from '../common/Buttons';
+import HeadingPrimary from '../common/HeadingPrimary';
 
 const schema = yup.object().shape({
 	username: yup.string().min(3).max(12).required('Username is required'),

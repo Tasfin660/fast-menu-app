@@ -1,17 +1,14 @@
 import { IoMdRefreshCircle } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
-const AppError = ({
-	src,
-	title,
-	message,
-	type
-}: {
+interface AppError {
 	src: string;
 	title: string;
 	message: string;
 	type?: string;
-}) => {
+}
+
+const AppError = ({ src, title, message, type }: AppError) => {
 	return (
 		<div className="my-10 flex h-full flex-col items-center">
 			<img src={src} alt="user none" className="mb-4 w-40 opacity-10" />

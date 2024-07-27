@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import AddForm from '../AddForm';
+import AddForm from '../forms/AddForm';
 
 const Add = () => {
 	const { authState } = useAuth();

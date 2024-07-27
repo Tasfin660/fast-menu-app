@@ -23,7 +23,7 @@ const reducer = (state: MealTypes, action: Action) => {
 };
 
 const Meal = ({ meal }: { meal: Meal }) => {
-	const { user, authState } = useAuth();
+	const { user, authState, addMeal } = useAuth();
 	const { selectMeal } = useMenu();
 	const { _id, name, image, price, tag, people, rate, likes } = meal;
 	const [{ imgLoading }, dispatch] = useReducer(reducer, initialState);
@@ -71,7 +71,9 @@ const Meal = ({ meal }: { meal: Meal }) => {
 						<button className="box-content rounded-full bg-white px-2.5 py-2 text-primary shadow-shadow-menu">
 							<AiOutlineLike />
 						</button>
-						<button className="box-content rounded-full bg-white px-2.5 py-2 text-primary shadow-shadow-menu">
+						<button
+							className="box-content rounded-full bg-white px-2.5 py-2 text-primary shadow-shadow-menu"
+							onClick={async () => await addMeal(_id || '')}>
 							<GoChecklist />
 						</button>
 						<button

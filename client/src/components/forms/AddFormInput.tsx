@@ -1,6 +1,6 @@
 import { UseFormRegister } from 'react-hook-form';
 import { IconType } from 'react-icons';
-import { Meal } from '../types/mealTypes';
+import { Meal } from '../../types/mealTypes';
 
 interface InputTypes {
 	span?: string;

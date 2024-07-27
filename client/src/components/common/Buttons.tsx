@@ -1,10 +1,9 @@
-const PrimaryBtn = ({
-	context,
-	onClick
-}: {
+interface Button {
 	context: string;
 	onClick?: () => void;
-}) => {
+}
+
+const PrimaryBtn = ({ context, onClick }: Button) => {
 	return (
 		<button
 			className="rounded-full bg-primary px-3 py-1 text-text-light duration-300 hover:bg-primary-dark"
@@ -14,13 +13,7 @@ const PrimaryBtn = ({
 	);
 };
 
-const SecondaryBtn = ({
-	context,
-	onClick
-}: {
-	context: string;
-	onClick?: () => void;
-}) => {
+const SecondaryBtn = ({ context, onClick }: Button) => {
 	return (
 		<button
 			className="rounded-full bg-primary-light px-3 py-1 text-primary duration-300 hover:bg-red-200"

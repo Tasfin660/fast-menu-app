@@ -1,8 +1,8 @@
 import { IoMdHome } from 'react-icons/io';
 import { RiArrowRightSLine } from 'react-icons/ri';
 import { Link, useLocation, useParams } from 'react-router-dom';
-import ToggleTheme from '../ToggleTheme';
 import { useMenu } from '../../contexts/MenuContext';
+import ToggleTheme from '../ToggleTheme';
 
 const Header = () => {
 	const { menuId, authId } = useParams();

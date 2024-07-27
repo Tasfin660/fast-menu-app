@@ -1,3 +1,4 @@
+import { IconType } from 'react-icons';
 import { FaHamburger, FaPizzaSlice } from 'react-icons/fa';
 import {
 	GiChickenLeg,
@@ -18,64 +19,29 @@ const Sidebar = () => {
 				<HeadingPrimary context="Fast-Menu" />
 			</Link>
 			<ul className="-mb-1 flex flex-col gap-3">
-				<li>
-					<NavLink
-						to="/menu/fried-chicken"
-						className="hover:text-textdark flex items-center gap-3 rounded-full px-6 py-2.5 duration-300 hover:mx-4 hover:bg-neutral-300/20">
-						<GiChickenLeg className="text-xl" /> <span>Fried Chicken</span>
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to="/menu/french-fries"
-						className="hover:text-textdark flex items-center gap-3 rounded-full px-6 py-2.5 duration-300 hover:mx-4 hover:bg-neutral-300/20">
-						<GiFrenchFries className="text-xl" /> <span>French Fries</span>
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to="/menu/burger"
-						className="hover:text-textdark flex items-center gap-3 rounded-full px-6 py-2.5 duration-300 hover:mx-4 hover:bg-neutral-300/20">
-						<FaHamburger className="text-xl" /> <span>Burger</span>
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to="/menu/sausage"
-						className="hover:text-textdark flex items-center gap-3 rounded-full px-6 py-2.5 duration-300 hover:mx-4 hover:bg-neutral-300/20">
-						<GiSausage className="text-xl" /> <span>Sausage</span>
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to="/menu/hotdog"
-						className="hover:text-textdark flex items-center gap-3 rounded-full px-6 py-2.5 duration-300 hover:mx-4 hover:bg-neutral-300/20">
-						<GiHotDog className="text-xl" /> <span>Hotdog</span>
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to="/menu/pizza"
-						className="hover:text-textdark flex items-center gap-3 rounded-full px-6 py-2.5 duration-300 hover:mx-4 hover:bg-neutral-300/20">
-						<FaPizzaSlice className="text-xl" /> <span>Pizza</span>
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to="/menu/taco"
-						className="hover:text-textdark flex items-center gap-3 rounded-full px-6 py-2.5 duration-300 hover:mx-4 hover:bg-neutral-300/20">
-						<GiTacos className="text-xl" /> <span>Taco</span>
-					</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to="/menu/drinks"
-						className="hover:text-textdark flex items-center gap-3 rounded-full px-6 py-2.5 duration-300 hover:mx-4 hover:bg-neutral-300/20">
-						<RiDrinks2Fill className="text-xl" /> <span>Drinks</span>
-					</NavLink>
-				</li>
+				<MenuLink link="fried-chicken" Icon={GiChickenLeg} />
+				<MenuLink link="french-fries" Icon={GiFrenchFries} />
+				<MenuLink link="burger" Icon={FaHamburger} />
+				<MenuLink link="sausage" Icon={GiSausage} />
+				<MenuLink link="hotdog" Icon={GiHotDog} />
+				<MenuLink link="pizza" Icon={FaPizzaSlice} />
+				<MenuLink link="taco" Icon={GiTacos} />
+				<MenuLink link="drinks" Icon={RiDrinks2Fill} />
 			</ul>
 		</nav>
+	);
+};
+
+const MenuLink = ({ link, Icon }: { link: string; Icon: IconType }) => {
+	return (
+		<li>
+			<NavLink
+				to={`/menu/${link}`}
+				className="hover:text-textdark flex items-center gap-3 rounded-full px-6 py-2.5 capitalize duration-300 hover:mx-4 hover:bg-neutral-300/20">
+				<Icon className="text-xl" />
+				<span>{link.replace('-', ' ')}</span>
+			</NavLink>
+		</li>
 	);
 };
 

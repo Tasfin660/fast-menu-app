@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
-import LoginForm from '../LoginForm';
-import RegisterForm from '../RegisterForm';
+import LoginForm from '../forms/LoginForm';
+import RegisterForm from '../forms/RegisterForm';
 import { useAuth } from '../../contexts/AuthContext';
 import { useEffect } from 'react';
 

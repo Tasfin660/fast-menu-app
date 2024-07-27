@@ -75,7 +75,7 @@ const MenuProvider = ({ children }: Children) => {
 	const postMeal = async (data: Meal) => {
 		try {
 			const res = await axios.post(
-				`${import.meta.env.VITE_BASE_URL}/menu/add-meal`,
+				`${import.meta.env.VITE_BASE_URL}/meal/add`,
 				data
 			);
 			dispatch({ type: 'meal/add', payload: res.data });
@@ -97,7 +97,7 @@ const MenuProvider = ({ children }: Children) => {
 		dispatch({ type: 'loading' });
 		try {
 			await axios.delete(
-				`${import.meta.env.VITE_BASE_URL}/menu/delete/${selectedMeal._id}`
+				`${import.meta.env.VITE_BASE_URL}/meal/delete/${selectedMeal._id}`
 			);
 			dispatch({ type: 'meal/delete', payload: selectedMeal._id });
 			deselectMeal();

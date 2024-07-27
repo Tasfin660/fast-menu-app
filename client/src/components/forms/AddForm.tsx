@@ -3,13 +3,13 @@ import { useForm } from 'react-hook-form';
 import { FaDollarSign, FaImage, FaPen, FaStar, FaTag } from 'react-icons/fa6';
 import { MdPeopleAlt } from 'react-icons/md';
 import * as yup from 'yup';
-import HeadingPrimary from '../components/common/HeadingPrimary';
-import { Meal } from '../types/mealTypes';
+import HeadingPrimary from '../common/HeadingPrimary';
+import { Meal } from '../../types/mealTypes';
 import { Input, SelectCategory } from './AddFormInput';
-import { AddSpinner } from './common/AppSpinners';
-import { PrimaryBtn, SecondaryBtn } from './common/Buttons';
-import { useMenu } from '../contexts/MenuContext';
-import AppError from './common/AppError';
+import { AddSpinner } from '../common/AppSpinners';
+import { PrimaryBtn, SecondaryBtn } from '../common/Buttons';
+import { useMenu } from '../../contexts/MenuContext';
+import AppError from '../common/AppError';
 
 const schema = yup.object().shape({
 	name: yup.string().required('Name is required'),

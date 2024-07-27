@@ -1,10 +1,23 @@
+import { useState } from 'react';
+
 const MealItem = ({ meal }) => {
-	const { image, name, category } = meal;
+	const [imgLoading, setImgLoading] = useState(true);
+	const { category, image, name } = meal;
+
 	return (
 		<li className="meal-item grid grid-cols-[55px,max-content,1fr,max-content] items-center rounded-full shadow-shadow-menu">
+			{imgLoading && (
+				<img
+					src="/meal-short.png"
+					alt="fast food"
+					className="rounded-full border-2 border-transparent bg-white p-2 shadow-shadow-menu duration-300"
+				/>
+			)}
 			<img
 				src={image}
-				alt=""
+				alt="meal"
+				style={imgLoading ? { visibility: 'hidden', display: 'none' } : {}}
+				onLoad={() => setImgLoading(false)}
 				className="rounded-full border-2 border-transparent bg-white p-2 shadow-shadow-menu duration-300"
 			/>
 			<h2 className="ml-4 mr-3 text-lg font-medium">{name}</h2>

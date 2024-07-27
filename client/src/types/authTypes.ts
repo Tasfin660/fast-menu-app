@@ -1,10 +1,12 @@
 import { ReactNode } from 'react';
+import type { Meal } from './mealTypes';
 
 interface Children {
 	children: ReactNode;
 }
 
 interface User {
+	_id?: string;
 	username: string;
 	image: string;
 	role: string;
@@ -30,6 +32,9 @@ interface ContextType {
 	logout: () => void;
 	authState: () => boolean;
 	resetAuthStatus: () => void;
+	addMeal: (_id: string) => void;
+	removeMeal: (_id: string) => void;
+	getMealList: () => Meal[];
 }
 
 interface AuthType {
@@ -42,7 +47,8 @@ type Action =
 	| { type: 'auth/login'; payload: User }
 	| { type: 'auth/logout' }
 	| { type: 'auth/error'; payload: { name: string; message: string } }
-	| { type: 'auth/status/reset' };
+	| { type: 'auth/status/reset' }
+	| { type: 'user/meal/add'; payload: string };
 
 export type {
 	Action,

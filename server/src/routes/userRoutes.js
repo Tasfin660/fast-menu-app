@@ -1,9 +1,14 @@
 import express from 'express';
-import { login, register } from '../controllers/userController.js';
+import {
+  getMeals,
+  addMeal,
+  deleteMeal,
+} from '../controllers/userController.js';
 
 const router = express.Router();
 
-router.post('/register', register);
-router.post('/login', login);
+router.get('/meals', getMeals);
+router.patch('/meal/add/:userId', addMeal);
+router.patch('/meal/delete/:userId', deleteMeal);
 
 export { router as userRouter };

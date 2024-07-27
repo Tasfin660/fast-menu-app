@@ -1,3 +1,4 @@
+import { IconType } from 'react-icons';
 import {
 	FaDiscord,
 	FaFacebookF,
@@ -11,48 +12,32 @@ const Footer = () => {
 	return (
 		<footer className="col-span-2 mt-2 flex justify-between rounded-full px-6 py-3 shadow-shadow-app">
 			<div className="flex items-center gap-8">
-				<a
-					href="https://www.facebook.com/Tasfin660"
-					target="_blank"
-					className="text-primary duration-300 hover:text-secondary">
-					<FaFacebookF />
-				</a>
-				<a
-					href="#"
-					target="_blank"
-					className="text-primary duration-300 hover:text-secondary">
-					<FaLinkedinIn />
-				</a>
-				<a
-					href="https://x.com/Tasfin660"
-					target="_blank"
-					className="text-primary duration-300 hover:text-secondary">
-					<FaXTwitter />
-				</a>
-				<a
-					href="https://github.com/Tasfin660"
-					target="_blank"
-					className="text-primary duration-300 hover:text-secondary">
-					<FaGithub />
-				</a>
-				<a
-					href="https://discord.com/users/513693207880663040"
-					target="_blank"
-					className="text-primary duration-300 hover:text-secondary">
-					<FaDiscord />
-				</a>
-				<a
-					href="https://github.com/Tasfin660/cocoa-insights"
-					target="_blank"
-					className="text-primary duration-300 hover:text-secondary">
-					<FaLink />
-				</a>
+				<SocialLink link="https://facebook.com/Tasfin660" Icon={FaFacebookF} />
+				<SocialLink link="#" Icon={FaLinkedinIn} />
+				<SocialLink link="https://x.com/Tasfin660" Icon={FaXTwitter} />
+				<SocialLink link="https://github.com/Tasfin660" Icon={FaGithub} />
+				<SocialLink
+					link="https://discord.com/users/513693207880663040"
+					Icon={FaDiscord}
+				/>
+				<SocialLink link="fast-menu-app.vercel.app" Icon={FaLink} />
 			</div>
 			<p className="font-medium">
 				Copyright &copy; Tasfin Hasan | Fast Menu App {new Date().getFullYear()}
 				. All Rights Reserved.
 			</p>
 		</footer>
+	);
+};
+
+const SocialLink = ({ link, Icon }: { link: string; Icon: IconType }) => {
+	return (
+		<a
+			href={link}
+			target="_blank"
+			className="text-primary duration-300 hover:text-secondary">
+			<Icon />
+		</a>
 	);
 };
 

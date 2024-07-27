@@ -1,8 +1,8 @@
-import MenuModel from '../models/mealModel.js';
+import MealModel from '../models/mealModel.js';
 
 const postMeal = async (req, res) => {
   try {
-    const newMeal = await new MenuModel({ ...req.body, likes: 1 });
+    const newMeal = await new MealModel({ ...req.body, likes: 1 });
     const meal = await newMeal.save();
     res.status(200).json(meal);
   } catch (err) {
@@ -12,8 +12,8 @@ const postMeal = async (req, res) => {
 
 const deleteMeal = async (req, res) => {
   try {
-    const { _id } = req.params;
-    await MenuModel.deleteOne({ _id });
+    const { mealId } = req.params;
+    await MealModel.deleteOne({ _id: mealId });
     res.status(200).end();
   } catch (err) {
     res.status(500).json({ message: err.message });
