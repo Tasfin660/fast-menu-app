@@ -8,7 +8,7 @@ import {
 const router = express.Router();
 
 router.get('/meals', getMeals);
-router.patch('/meal/add/:userId', addMeal);
+router.patch('/meal/post/:userId', addMeal);
 router.patch('/meal/delete/:userId', deleteMeal);
 
 export { router as userRouter };

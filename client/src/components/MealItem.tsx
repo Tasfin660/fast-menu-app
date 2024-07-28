@@ -16,9 +16,8 @@ const MealItem = ({ meal }) => {
 			<img
 				src={image}
 				alt="meal"
-				style={imgLoading ? { visibility: 'hidden', display: 'none' } : {}}
 				onLoad={() => setImgLoading(false)}
-				className="rounded-full border-2 border-transparent bg-white p-2 shadow-shadow-menu duration-300"
+				className={`rounded-full border-2 border-transparent bg-white p-2 shadow-shadow-menu duration-300 ${imgLoading && 'hidden'}`}
 			/>
 			<h2 className="ml-4 mr-3 text-lg font-medium">{name}</h2>
 			<h3 className="w-max rounded-lg bg-primary-light px-2.5 py-[1px] text-sm font-semibold uppercase text-primary">
