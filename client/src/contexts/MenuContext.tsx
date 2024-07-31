@@ -28,7 +28,7 @@ const reducer = (state: MenuTypes, action: Action) => {
 			return { ...state, menuLoading: true };
 		case 'menu/get':
 			return { ...state, menu: action.payload, menuLoading: false };
-		case 'meal/add':
+		case 'meal/post':
 			return { ...state, menu: [...state.menu, action.payload] };
 		case 'meal/select':
 			return { ...state, selectedMeal: action.payload };
@@ -75,10 +75,10 @@ const MenuProvider = ({ children }: Children) => {
 	const postMeal = async (data: Meal) => {
 		try {
 			const res = await axios.post(
-				`${import.meta.env.VITE_BASE_URL}/meal/add`,
+				`${import.meta.env.VITE_BASE_URL}/meal/post`,
 				data
 			);
-			dispatch({ type: 'meal/add', payload: res.data });
+			dispatch({ type: 'meal/post', payload: res.data });
 		} catch (err) {
 			dispatch({ type: 'menu/error' });
 			console.error(err?.data.message);

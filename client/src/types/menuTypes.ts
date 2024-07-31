@@ -26,7 +26,7 @@ interface ContextType {
 type Action =
 	| { type: 'loading' }
 	| { type: 'menu/get'; payload: Meal[] }
-	| { type: 'meal/add'; payload: Meal }
+	| { type: 'meal/post'; payload: Meal }
 	| { type: 'meal/select'; payload: { _id: string; name: string } }
 	| { type: 'meal/deselect' }
 	| { type: 'meal/delete'; payload: string }
