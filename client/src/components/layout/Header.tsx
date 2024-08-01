@@ -5,17 +5,17 @@ import { useMenu } from '../../contexts/MenuContext';
 import ToggleTheme from '../ToggleTheme';
 
 const Header = () => {
-	const { menuId, authId } = useParams();
+	const { category, authId } = useParams();
 	const { pathname } = useLocation();
-	const { menu } = useMenu();
-	const length = menu.length;
+	const { meals } = useMenu();
+	const length = meals.length;
 
 	return (
 		<header className="mb-2 flex items-center justify-between px-3">
 			<div className="flex items-center text-sm font-medium text-primary">
 				<IoMdHome className="mr-1.5" />
 				<Link to="/">Home</Link>
-				{menuId && (
+				{category && (
 					<>
 						<RiArrowRightSLine className="text-lg" />
 						<span>Menu</span>
@@ -31,7 +31,7 @@ const Header = () => {
 					</>
 				)}
 				<span className="capitalize">{authId}</span>
-				<span className="capitalize">{menuId}</span>
+				<span className="capitalize">{category}</span>
 				<span className="capitalize">
 					{pathname === '/menu/add-meal' && 'Add Meal'}
 				</span>
@@ -40,7 +40,7 @@ const Header = () => {
 				<div className="header-message relative w-[400px] overflow-hidden text-nowrap rounded-full pb-1.5 pt-2 text-sm font-medium shadow-shadow-app">
 					&nbsp;
 				</div>
-				{menuId && (
+				{category && (
 					<p className="rounded-full px-4 pb-1.5 pt-2 text-sm font-medium text-primary shadow-shadow-app">
 						Results: {length < 10 ? `0${length}` : `${length}`}
 					</p>

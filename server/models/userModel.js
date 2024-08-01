@@ -14,9 +14,13 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  meal_list: {
-    type: Array,
-  },
+  meals: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'all-meals',
+      required: true,
+    },
+  ],
   joined: {
     type: String,
     required: true,
@@ -26,6 +30,7 @@ const UserSchema = mongoose.Schema({
     required: true,
   },
 });
+
 const UserModel = new mongoose.model('users', UserSchema);
 
 export default UserModel;

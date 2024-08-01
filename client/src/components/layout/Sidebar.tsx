@@ -36,7 +36,7 @@ const MenuLink = ({ link, Icon }: { link: string; Icon: IconType }) => {
 	return (
 		<li>
 			<NavLink
-				to={`/menu/${link}`}
+				to={`/menu/meals/${link}`}
 				className="hover:text-textdark flex items-center gap-3 rounded-full px-6 py-2.5 capitalize duration-300 hover:mx-4 hover:bg-neutral-300/20">
 				<Icon className="text-xl" />
 				<span>{link.replace('-', ' ')}</span>

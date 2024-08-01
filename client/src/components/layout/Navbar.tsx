@@ -2,12 +2,13 @@ import { FaCrown } from 'react-icons/fa';
 import { IoLogIn, IoLogOut } from 'react-icons/io5';
 import { MdOutlineBookmarkAdd } from 'react-icons/md';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
+import { useUser } from '../../contexts/UserContext';
 import { IoIosCheckmarkCircle, IoIosCloseCircle } from 'react-icons/io';
 import { useMenu } from '../../contexts/MenuContext';
+import LoadingImage from '../common/LoadingImage';
 
 const Navbar = () => {
-	const { user, logout, authState } = useAuth();
+	const { user, logout, authState } = useUser();
 	const { selectedMeal, deselectMeal, deleteMeal } = useMenu();
 	const { username, image, role } = user;
 	const { pathname } = useLocation();
@@ -21,11 +22,17 @@ const Navbar = () => {
 	return (
 		<nav className="col-start-2 col-end-3 flex items-center justify-between overflow-hidden rounded-full p-2 pr-4 shadow-shadow-app">
 			<figure className="flex items-center">
-				<img src={image} alt="user" className="w-10 rounded-full" />
+				<LoadingImage
+					lImgSrc="/user-none-big.png"
+					lImgStyle="w-10 rounded-full"
+					src={image}
+					alt="user"
+					style="w-10 rounded-full"
+				/>
 				<figcaption className="ml-4 mr-2 font-medium">{username}</figcaption>
 				{role === 'admin' && <FaCrown className="text-sm text-secondary" />}
 			</figure>
-			{selectedMeal?._id && (
+			{selectedMeal?.mealId && (
 				<div className="nav-noti flex items-center gap-1">
 					<p>
 						Proceed to delete&nbsp;
@@ -49,7 +56,7 @@ const Navbar = () => {
 			<div className="flex items-center gap-4">
 				{authState() ? (
 					<>
-						<Link to="menu/add-meal" className="flex items-center gap-4">
+						<Link to="menu/meals/create" className="flex items-center gap-4">
 							<MdOutlineBookmarkAdd
 								className={`box-content rounded-full bg-primary-light px-3 py-1.5 text-xl text-primary duration-300 hover:bg-primary hover:text-text-light ${pathname === '/menu/add' && '!bg-primary text-text-light'}`}
 							/>
@@ -57,15 +64,15 @@ const Navbar = () => {
 						<button onClick={handleLogout}>
 							<Link to="/" className="flex items-center gap-4">
 								<IoLogOut
-									className={`box-content rounded-full bg-primary-light px-3 py-1.5 text-xl text-primary duration-300 hover:bg-primary hover:text-text-light ${(pathname === '/auth/login' || pathname === '/auth/register') && '!bg-primary text-text-light'}`}
+									className={`box-content rounded-full bg-primary-light px-3 py-1.5 text-xl text-primary duration-300 hover:bg-primary hover:text-text-light ${(pathname === '/users/login' || pathname === '/users/register') && '!bg-primary text-text-light'}`}
 								/>
 							</Link>
 						</button>
 					</>
 				) : (
-					<Link to="/auth/login" className="flex items-center gap-4">
+					<Link to="/users/login" className="flex items-center gap-4">
 						<IoLogIn
-							className={`box-content rounded-full bg-primary-light px-3 py-1.5 text-xl text-primary duration-300 hover:bg-primary hover:text-text-light ${(pathname === '/auth/login' || pathname === '/auth/register') && '!bg-primary text-text-light'}`}
+							className={`box-content rounded-full bg-primary-light px-3 py-1.5 text-xl text-primary duration-300 hover:bg-primary hover:text-text-light ${(pathname === '/users/login' || pathname === '/users/register') && '!bg-primary text-text-light'}`}
 						/>
 					</Link>
 				)}

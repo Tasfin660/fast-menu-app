@@ -6,16 +6,16 @@ import { MenuSpinner } from '../common/AppSpinners';
 import Meal from '../Meal';
 
 const Menu = () => {
-	const { menuId } = useParams();
-	const { menu, menuLoading, menuError, getMenu } = useMenu();
+	const { category } = useParams();
+	const { meals, loading, error, getMeals } = useMenu();
 
 	useEffect(() => {
-		getMenu(menuId || '');
-	}, [menuId]);
+		getMeals(category || '');
+	}, [category]);
 
-	if (menuLoading) return <MenuSpinner />;
+	if (loading) return <MenuSpinner />;
 
-	if (menuError)
+	if (error)
 		return (
 			<AppError
 				src="/server-error.png"
@@ -24,7 +24,7 @@ const Menu = () => {
 			/>
 		);
 
-	if (menu.length === 0)
+	if (meals.length === 0)
 		return (
 			<AppError
 				src="/add-menu.png"
@@ -34,8 +34,12 @@ const Menu = () => {
 		);
 
 	return (
-		<main className="app-scrollbar shadow-shadowapp grid h-full grid-cols-[repeat(3,350px)] grid-rows-[max-content] items-start justify-between gap-y-9 overflow-y-scroll rounded-lg py-1 pl-3 pr-6">
-			{menu.map(meal => (
+		<main
+			className="app-scrollbar shadow-shadowapp grid h-full grid-cols-[repeat(3,350px)] items-start justify-between gap-y-9 overflow-y-scroll rounded-lg py-1 pl-3 pr-6"
+			style={{
+				gridTemplateRows: `repeat(${Math.ceil(meals.length / 3)}, max-content)`
+			}}>
+			{meals.map(meal => (
 				<Meal key={meal._id} meal={meal} />
 			))}
 		</main>

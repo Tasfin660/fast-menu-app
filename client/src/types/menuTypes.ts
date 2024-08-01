@@ -1,35 +1,51 @@
 import { ReactNode } from 'react';
-import type { Meal } from './mealTypes';
 
 interface Children {
 	children: ReactNode;
 }
 
-interface MenuTypes {
-	menu: Meal[];
-	selectedMeal: {
-		_id: string;
-		name: string;
-	};
-	menuLoading: boolean;
-	menuError: boolean;
+interface Meal {
+	_id?: string;
+	category: string;
+	name: string;
+	image: string;
+	price: number;
+	tag: string;
+	people: number;
+	calorie: number;
+	rate: number;
+	likes?: string[];
 }
 
-interface ContextType {
-	getMenu: (menuId: string) => void;
-	postMeal: (data: Meal) => void;
-	selectMeal: (_id: string, name: string) => void;
+interface SelectedMeal {
+	mealId: string;
+	name: string;
+}
+
+interface MenuState {
+	meals: Meal[];
+	selectedMeal: SelectedMeal;
+	loading: boolean;
+	error: boolean;
+}
+
+interface MenuContext {
+	getMeals: (category: string) => void;
+	createMeal: (data: Meal) => void;
+	likeMeal: (mealId: string) => void;
+	selectMeal: (mealId: string, name: string) => void;
 	deselectMeal: () => void;
 	deleteMeal: () => void;
 }
 
 type Action =
 	| { type: 'loading' }
-	| { type: 'menu/get'; payload: Meal[] }
-	| { type: 'meal/post'; payload: Meal }
-	| { type: 'meal/select'; payload: { _id: string; name: string } }
+	| { type: 'meal/select'; payload: SelectedMeal }
 	| { type: 'meal/deselect' }
+	| { type: 'meals/get'; payload: Meal[] }
+	| { type: 'meal/create'; payload: Meal }
+	| { type: 'meal/like'; payload: { userId: string; mealId: string } }
 	| { type: 'meal/delete'; payload: string }
-	| { type: 'menu/error' };
+	| { type: 'error' };
 
-export type { Action, Children, ContextType, MenuTypes };
+export type { Action, Children, Meal, MenuContext, MenuState };

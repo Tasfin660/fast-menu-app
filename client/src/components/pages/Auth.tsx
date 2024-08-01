@@ -1,47 +1,52 @@
-import { Link, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useUser } from '../../contexts/UserContext';
 import LoginForm from '../forms/LoginForm';
 import RegisterForm from '../forms/RegisterForm';
-import { useAuth } from '../../contexts/AuthContext';
-import { useEffect } from 'react';
 
 const Auth = () => {
-	const { authId } = useParams();
-	const { authStatus, resetAuthStatus } = useAuth();
+	const { formId } = useParams();
+	const { authState, authStatus, resetAuthStatus } = useUser();
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		if (authState()) navigate('/', { replace: true });
+	}, [authState, navigate]);
 
 	useEffect(() => {
 		resetAuthStatus();
-	}, [authId]);
+	}, [formId]);
 
 	return (
 		<main className="my-10 grid grid-cols-3 gap-16 px-3">
 			<div className="text-sm font-medium">
 				<p>
-					Status:{' '}
+					Status:&nbsp;
 					<span
-						className={`font-normal ${authStatus?.name === 'Action Successful!' ? 'text-green-500' : 'text-primary'} `}>
-						{authStatus?.name}
+						className={`font-normal capitalize ${authStatus.status === 'success' ? 'text-green-500' : 'text-primary'} `}>
+						{authStatus.status}
 					</span>
 				</p>
 				<p>
-					Message:{' '}
+					Message:&nbsp;
 					<span
-						className={`font-normal ${authStatus?.name === 'Action Successful!' ? 'text-green-500' : 'text-primary'} `}>
-						{authStatus?.message}
+						className={`font-normal ${authStatus.status === 'success' ? 'text-green-500' : 'text-primary'} `}>
+						{authStatus.message}
 					</span>
 				</p>
 			</div>
-			{authId === 'login' ? <LoginForm /> : <RegisterForm />}
-			{authId === 'login' ? (
+			{formId === 'login' ? <LoginForm /> : <RegisterForm />}
+			{formId === 'login' ? (
 				<div className="flex flex-col items-center justify-self-end text-sm">
 					<p>Don't have a account?</p>
-					<Link to="/auth/register" className="font-medium text-primary">
+					<Link to="/users/register" className="font-medium text-primary">
 						Register
 					</Link>
 				</div>
 			) : (
 				<div className="flex flex-col items-center justify-self-end text-sm">
 					<p>Already have a account?</p>
-					<Link to="/auth/login" className="font-medium text-primary">
+					<Link to="/users/login" className="font-medium text-primary">
 						Login
 					</Link>
 				</div>

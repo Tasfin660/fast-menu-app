@@ -16,9 +16,9 @@ const Router = () => {
 					element: <MainLayout />,
 					children: [
 						{ index: true, element: <Home /> },
-						{ path: 'menu/:menuId', element: <Menu /> },
-						{ path: 'menu/add-meal', element: <Add /> },
-						{ path: 'auth/:authId', element: <Auth /> },
+						{ path: 'menu/meals/:category', element: <Menu /> },
+						{ path: 'menu/meals/create', element: <Add /> },
+						{ path: 'users/:formId', element: <Auth /> },
 						{ path: 'unauthorized', element: <Unauthorized /> },
 						{ path: '*', element: <NotFound /> }
 					]

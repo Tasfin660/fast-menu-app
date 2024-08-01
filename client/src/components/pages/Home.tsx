@@ -1,9 +1,9 @@
-import { useAuth } from '../../contexts/AuthContext';
+import { useUser } from '../../contexts/UserContext';
 import AppError from '../common/AppError';
-import MealList from '../MealList';
+import UserMeals from '../UserMeals';
 
 const Home = () => {
-	const { authState } = useAuth();
+	const { authState } = useUser();
 
 	if (!authState())
 		return (
@@ -18,7 +18,7 @@ const Home = () => {
 	return (
 		<div className="grid h-full grid-cols-2 rounded-2xl bg-white shadow-shadow-menu">
 			<div className="border-r-[1px] border-neutral-300/30">&nbsp;</div>
-			<MealList />
+			<UserMeals />
 		</div>
 	);
 };

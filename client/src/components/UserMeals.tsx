@@ -1,16 +1,14 @@
 import { useEffect } from 'react';
-import { useAuth } from '../contexts/AuthContext';
 import type { Meal } from '../types/mealTypes';
-import MealItem from './MealItem';
+import UserMeal from './UserMeal';
+import { useUser } from '../contexts/UserContext';
 
-const MealList = () => {
-	const { getMealList } = useAuth();
-
-	let meals: Meal[] = [];
-	const length = meals.length;
+const UserMeals = () => {
+	const { userMeals, getUserMeals } = useUser();
+	const length = userMeals.length;
 
 	useEffect(() => {
-		meals = getMealList();
+		getUserMeals();
 	}, []);
 
 	return (
@@ -40,12 +38,12 @@ const MealList = () => {
 						</p>
 					</div>
 				)}
-				{meals.map(meal => (
-					<MealItem meal={meal} />
+				{userMeals.map(meal => (
+					<UserMeal key={meal._id} meal={meal} />
 				))}
 			</ul>
 		</div>
 	);
 };
 
-export default MealList;
+export default UserMeals;

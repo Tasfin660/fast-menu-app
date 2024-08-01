@@ -1,92 +1,123 @@
+import axios from 'axios';
 import { createContext, useContext, useReducer } from 'react';
 import type {
 	Action,
 	Children,
-	ContextType,
-	MenuTypes
+	Meal,
+	MenuContext,
+	MenuState
 } from '../types/menuTypes';
-import axios from 'axios';
-import { Meal } from '../types/mealTypes';
+import { useCookies } from 'react-cookie';
+import { useUser } from './UserContext';
 
-const MenuContext = createContext<undefined | (ContextType & MenuTypes)>(
+const MenuContext = createContext<undefined | (MenuContext & MenuState)>(
 	undefined
 );
 
 const initialState = {
-	menu: [],
+	meals: [],
 	selectedMeal: {
-		_id: '',
+		mealId: '',
 		name: ''
 	},
-	menuLoading: false,
-	menuError: false
+	loading: false,
+	error: false
 };
 
-const reducer = (state: MenuTypes, action: Action) => {
+const reducer = (state: MenuState, action: Action) => {
 	switch (action.type) {
 		case 'loading':
-			return { ...state, menuLoading: true };
-		case 'menu/get':
-			return { ...state, menu: action.payload, menuLoading: false };
-		case 'meal/post':
-			return { ...state, menu: [...state.menu, action.payload] };
+			return { ...state, loading: true };
 		case 'meal/select':
 			return { ...state, selectedMeal: action.payload };
 		case 'meal/deselect':
 			return {
 				...state,
 				selectedMeal: {
-					_id: '',
+					mealId: '',
 					name: ''
 				}
+			};
+		case 'meals/get':
+			return { ...state, meals: action.payload, loading: false };
+		case 'meal/like':
+			return {
+				...state,
+				meals: state.meals.map(meal =>
+					meal._id === action.payload.mealId
+						? { ...meal, likes: [...meal.likes, action.payload.userId] }
+						: meal
+				)
 			};
 		case 'meal/delete':
 			return {
 				...state,
-				menu: state.menu.filter(meal => meal._id !== action.payload),
-				menuLoading: false
+				meals: state.meals.filter(meal => meal._id !== action.payload),
+				loading: false
 			};
-		case 'menu/error':
-			return { ...state, menuLoading: false, menuError: true };
+		case 'error':
+			return { ...state, loading: false, error: true };
 		default:
 			throw new Error('Action unknown!');
 	}
 };
 
 const MenuProvider = ({ children }: Children) => {
-	const [{ menu, selectedMeal, menuLoading, menuError }, dispatch] = useReducer(
+	const { user } = useUser();
+
+	const [cookies] = useCookies(['jwt']);
+	const [{ meals, selectedMeal, loading, error }, dispatch] = useReducer(
 		reducer,
 		initialState
 	);
 
-	const getMenu = async (menuId: string) => {
+	const getMeals = async (category: string) => {
 		dispatch({ type: 'loading' });
 		try {
 			const res = await axios.get(
-				`${import.meta.env.VITE_BASE_URL}/menu/${menuId}`
+				`${import.meta.env.VITE_BASE_URL}/menu/meals/${category}`
 			);
-			dispatch({ type: 'menu/get', payload: res.data });
+			dispatch({ type: 'meals/get', payload: res.data.data });
 		} catch (err) {
-			dispatch({ type: 'menu/error' });
-			console.error(err?.data.message);
+			console.log(err);
+			dispatch({ type: 'error' });
 		}
 	};
 
-	const postMeal = async (data: Meal) => {
+	const createMeal = async (data: Meal) => {
 		try {
-			const res = await axios.post(
-				`${import.meta.env.VITE_BASE_URL}/meal/post`,
-				data
-			);
-			dispatch({ type: 'meal/post', payload: res.data });
+			await axios.post(`${import.meta.env.VITE_BASE_URL}/menu/meals`, data, {
+				headers: { Authorization: `Bearer ${cookies.jwt}` }
+			});
 		} catch (err) {
-			dispatch({ type: 'menu/error' });
-			console.error(err?.data.message);
+			dispatch({ type: 'error' });
 		}
 	};
 
-	const selectMeal = (_id: string, name: string) => {
-		dispatch({ type: 'meal/select', payload: { _id, name } });
+	const likeMeal = async (mealId: string) => {
+		try {
+			await axios.put(
+				`${import.meta.env.VITE_BASE_URL}/menu/meals`,
+				{ mealId },
+				{
+					headers: { Authorization: `Bearer ${cookies.jwt}` }
+				}
+			);
+			dispatch({
+				type: 'meal/like',
+				payload: {
+					userId: user._id,
+					mealId
+				}
+			});
+		} catch (err) {
+			console.log(err);
+			dispatch({ type: 'error' });
+		}
+	};
+
+	const selectMeal = (mealId: string, name: string) => {
+		dispatch({ type: 'meal/select', payload: { mealId, name } });
 	};
 
 	const deselectMeal = () => {
@@ -94,27 +125,31 @@ const MenuProvider = ({ children }: Children) => {
 	};
 
 	const deleteMeal = async () => {
+		deselectMeal();
 		dispatch({ type: 'loading' });
 		try {
 			await axios.delete(
-				`${import.meta.env.VITE_BASE_URL}/meal/delete/${selectedMeal._id}`
+				`${import.meta.env.VITE_BASE_URL}/menu/meals/${selectedMeal.mealId}`,
+				{
+					headers: { Authorization: `Bearer ${cookies.jwt}` }
+				}
 			);
-			dispatch({ type: 'meal/delete', payload: selectedMeal._id });
-			deselectMeal();
+			dispatch({ type: 'meal/delete', payload: selectedMeal.mealId });
 		} catch (error) {
-			dispatch({ type: 'menu/error' });
-			console.error(err?.data.message);
+			dispatch({ type: 'error' });
 		}
 	};
+
 	return (
 		<MenuContext.Provider
 			value={{
-				menu,
+				meals,
 				selectedMeal,
-				menuLoading,
-				menuError,
-				getMenu,
-				postMeal,
+				loading,
+				error,
+				getMeals,
+				createMeal,
+				likeMeal,
 				selectMeal,
 				deselectMeal,
 				deleteMeal

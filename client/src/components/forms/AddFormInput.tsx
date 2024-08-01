@@ -1,6 +1,16 @@
 import { UseFormRegister } from 'react-hook-form';
 import { IconType } from 'react-icons';
-import { Meal } from '../../types/mealTypes';
+
+interface Meal {
+	category: string;
+	name: string;
+	image: string;
+	price: number;
+	tag: string;
+	people: number;
+	calorie: number;
+	rate: number;
+}
 
 interface InputTypes {
 	span?: string;
@@ -12,7 +22,7 @@ interface InputTypes {
 
 const Input = ({ span, ph, Icon, iClass, reg }: InputTypes) => {
 	return (
-		<div className={`relative ${span === '2' && 'col-span-2'}`}>
+		<div className={`relative col-span-${span}`}>
 			<input
 				type="text"
 				placeholder={ph as string}
@@ -28,7 +38,7 @@ const Input = ({ span, ph, Icon, iClass, reg }: InputTypes) => {
 const SelectCategory = ({ reg }: { reg: UseFormRegister<Meal> }) => {
 	return (
 		<select
-			className="col-span-2 w-full rounded-full border-[1px] border-secondary bg-secondary py-2 pl-4 pr-10 shadow-shadow-app outline-none"
+			className="col-span-3 w-full rounded-full border-[1px] border-secondary bg-secondary py-2 pl-4 pr-10 shadow-shadow-app outline-none"
 			{...reg('category')}>
 			<option value="fried-chicken">Fried Chicken</option>
 			<option value="french-fries">French Fries</option>

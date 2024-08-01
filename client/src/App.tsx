@@ -1,14 +1,14 @@
-import { AuthProvider } from './contexts/AuthContext';
+import { UserProvider } from './contexts/UserContext';
 import { MenuProvider } from './contexts/MenuContext';
 import Router from './Router';
 
 const App = () => {
 	return (
-		<MenuProvider>
-			<AuthProvider>
+		<UserProvider>
+			<MenuProvider>
 				<Router />
-			</AuthProvider>
-		</MenuProvider>
+			</MenuProvider>
+		</UserProvider>
 	);
 };
 

@@ -1,10 +1,6 @@
 import mongoose from 'mongoose';
 
 const MealSchema = mongoose.Schema({
-  category: {
-    type: String,
-    required: true,
-  },
   name: {
     type: String,
     required: true,
@@ -21,6 +17,10 @@ const MealSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  category: {
+    type: String,
+    required: true,
+  },
   people: {
     type: Number,
     required: true,
@@ -29,10 +29,13 @@ const MealSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  likes: {
-    type: Number,
-    required: true,
-  },
+  likes: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'users',
+      required: true,
+    },
+  ],
 });
 
 const MealModel = new mongoose.model('all-meals', MealSchema);

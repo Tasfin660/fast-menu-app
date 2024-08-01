@@ -20,12 +20,12 @@ const AppError = ({ src, title, message, type }: AppError) => {
 				{type === 'home' ? (
 					<>
 						<Link
-							to="/auth/login"
+							to="/users/login"
 							className="rounded-full bg-primary px-3 py-1 text-text-light duration-300 hover:bg-primary-dark">
 							Log In
 						</Link>
 						<Link
-							to="/auth/register"
+							to="/users/register"
 							className="rounded-full bg-primary-light px-3 py-1 text-primary duration-300 hover:bg-red-200">
 							Register
 						</Link>

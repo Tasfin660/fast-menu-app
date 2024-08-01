@@ -1,17 +1,15 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaImage, FaLock, FaUser } from 'react-icons/fa6';
-import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
-import { useAuth } from '../../contexts/AuthContext';
-import type { RegisterType } from '../../types/authTypes';
+import { useUser } from '../../contexts/UserContext';
+import type { Register } from '../../types/userTypes';
 import { AuthSpinner } from '../common/AppSpinners';
 import { PrimaryBtn } from '../common/Buttons';
 import HeadingPrimary from '../common/HeadingPrimary';
 
 const schema = yup.object().shape({
-	username: yup.string().min(3).max(12).required('Username is required'),
+	username: yup.string().min(3).max(36).required('Username is required'),
 	image: yup.string().required('Image is required'),
 	password: yup.string().min(6).max(64).required('Password is required'),
 	confirmPassword: yup
@@ -21,12 +19,7 @@ const schema = yup.object().shape({
 });
 
 const RegisterForm = () => {
-	const { authState, register } = useAuth();
-	const navigate = useNavigate();
-
-	useEffect(() => {
-		if (authState()) navigate('/', { replace: true });
-	}, [authState, navigate]);
+	const { register } = useUser();
 
 	const {
 		register: registerInput,
@@ -37,7 +30,7 @@ const RegisterForm = () => {
 		resolver: yupResolver(schema)
 	});
 
-	const onSubmit = async (data: RegisterType) => {
+	const onSubmit = async (data: Register) => {
 		await register(data);
 		reset();
 	};
