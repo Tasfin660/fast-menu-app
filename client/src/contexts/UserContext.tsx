@@ -152,6 +152,17 @@ const UserProvider = ({ children }: Children) => {
 		dispatch({ type: 'auth/logout' });
 	};
 
+	const deleteUser = async () => {
+		try {
+			await axios.delete(`${import.meta.env.VITE_BASE_URL}/users`, {
+				headers: { Authorization: `Bearer ${cookies.jwt}` }
+			});
+			logout();
+		} catch (err) {
+			dispatch({ type: 'error' });
+		}
+	};
+
 	const authState = () => {
 		return !!cookies.jwt;
 	};
@@ -217,6 +228,7 @@ const UserProvider = ({ children }: Children) => {
 				register,
 				login,
 				logout,
+				deleteUser,
 				getUserMeals,
 				addMeal,
 				removeMeal

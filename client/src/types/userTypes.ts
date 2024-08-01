@@ -51,6 +51,7 @@ interface UserContext {
 	register: (data: Register) => void;
 	login: (data: Login) => void;
 	logout: () => void;
+	deleteUser: () => void;
 	addMeal: (mealId: string) => void;
 	getUserMeals: () => void;
 	removeMeal: (mealId: string) => void;

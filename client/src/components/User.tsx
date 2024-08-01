@@ -3,7 +3,7 @@ import { useUser } from '../contexts/UserContext';
 import LoadingImage from './common/LoadingImage';
 
 const User = () => {
-	const { user } = useUser();
+	const { user, deleteUser } = useUser();
 	const { username, image, role, joined } = user;
 	return (
 		<div className="flex flex-col justify-center gap-8 border-r-[1px] border-neutral-300/30 px-12">
@@ -30,7 +30,9 @@ const User = () => {
 					Are you sure you want to delete your account? This can't be undone,
 					and all your data will be lost forever.
 				</p>
-				<button className="mb-1.5 rounded-sm bg-primary-gradient px-3 py-1 text-white shadow-shadow-primary duration-300 hover:-translate-y-1 hover:shadow-xl">
+				<button
+					className="mb-1.5 rounded-sm bg-primary-gradient px-3 py-1 text-white shadow-shadow-primary duration-300 hover:-translate-y-1 hover:shadow-xl"
+					onClick={() => deleteUser()}>
 					Delete
 				</button>
 			</div>
