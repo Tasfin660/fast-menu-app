@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useMenu } from '../../contexts/MenuContext';
 import AppError from '../common/AppError';
-import { MenuSpinner } from '../common/AppSpinners';
+import Spinner from '../common/Spinner';
 import Meal from '../Meal';
 
 const Menu = () => {
@@ -13,7 +13,7 @@ const Menu = () => {
 		getMeals(category || '');
 	}, [category]);
 
-	if (loading) return <MenuSpinner />;
+	if (loading) return <Spinner type="app" />;
 
 	if (error)
 		return (

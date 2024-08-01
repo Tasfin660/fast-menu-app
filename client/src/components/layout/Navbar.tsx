@@ -30,7 +30,7 @@ const Navbar = () => {
 					style="w-10 rounded-full"
 				/>
 				<figcaption className="ml-4 mr-2 font-medium">{username}</figcaption>
-				{role === 'admin' && <FaCrown className="text-sm text-secondary" />}
+				{role === 'Admin' && <FaCrown className="text-sm text-secondary" />}
 			</figure>
 			{selectedMeal?.mealId && (
 				<div className="nav-noti flex items-center gap-1">

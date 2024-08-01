@@ -19,7 +19,7 @@
 }
 
 /* Menu spinner */
-.menu-spinner {
+.app-spinner {
 	width: 72px;
 	height: 72px;
 	border-radius: 50%;
@@ -101,9 +101,9 @@
 }
 
 .header-message::before {
-	content: 'Welcome to the Fast-Menu App. Add your favorite items and enjoy! 🍕 🍟 🍾';
+	content: 'Welcome to the Fast-Menu App. Add your favorite meals to the list and enjoy! 🍕 🍟 🍾';
 	position: absolute;
-	animation: headerMessageAnimation 6s linear infinite;
+	animation: headerMessageAnimation 7s linear infinite;
 }
 
 @keyframes headerMessageAnimation {
@@ -112,6 +112,6 @@
 	}
 
 	100% {
-		transform: translateX(-450px);
+		transform: translateX(-600px);
 	}
 }

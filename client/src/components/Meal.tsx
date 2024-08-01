@@ -57,7 +57,7 @@ const Meal = ({ index, meal }: { index: number; meal: Meal }) => {
 							</button>
 							<button
 								className="box-content rounded-full bg-primary p-1.5 text-sm text-text-light duration-300 hover:bg-primary-dark disabled:cursor-not-allowed disabled:bg-primary"
-								disabled={user.role !== 'admin'}
+								disabled={user.role !== 'Admin'}
 								onClick={() => selectMeal(_id || '', name)}>
 								<TbTrashXFilled />
 							</button>

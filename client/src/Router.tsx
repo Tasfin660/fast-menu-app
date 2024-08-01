@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
-import Add from './components/pages/Add';
 import Auth from './components/pages/Auth';
+import CreateMeal from './components/pages/CreateMeal';
 import Home from './components/pages/Home';
 import Menu from './components/pages/Menu';
 import NotFound from './components/pages/NotFound';
@@ -17,7 +17,7 @@ const Router = () => {
 					children: [
 						{ index: true, element: <Home /> },
 						{ path: 'menu/meals/:category', element: <Menu /> },
-						{ path: 'menu/meals/create', element: <Add /> },
+						{ path: 'menu/meals/create', element: <CreateMeal /> },
 						{ path: 'users/:formId', element: <Auth /> },
 						{ path: 'unauthorized', element: <Unauthorized /> },
 						{ path: '*', element: <NotFound /> }

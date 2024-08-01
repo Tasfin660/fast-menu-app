@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useUser } from '../contexts/UserContext';
 import AppError from './common/AppError';
-import { MenuSpinner } from './common/AppSpinners';
+import Spinner from './common/Spinner';
 import UserMeal from './UserMeal';
 
 const UserMeals = () => {
@@ -31,7 +31,7 @@ const UserMeals = () => {
 				/>
 			</div>
 			<ul className="app-scrollbar flex h-full flex-col items-center gap-6 overflow-y-scroll pb-10 pl-4 pr-6 pt-2">
-				{loading && <MenuSpinner />}
+				{loading && <Spinner type="app" />}
 				{error && (
 					<AppError
 						src="/server-error.png"

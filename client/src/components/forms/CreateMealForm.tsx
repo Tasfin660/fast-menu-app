@@ -1,16 +1,16 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { FaDollarSign, FaImage, FaPen, FaStar, FaTag } from 'react-icons/fa6';
 import { FaFire } from 'react-icons/fa';
+import { FaDollarSign, FaImage, FaPen, FaStar, FaTag } from 'react-icons/fa6';
 import { MdPeopleAlt } from 'react-icons/md';
 import * as yup from 'yup';
 import { useMenu } from '../../contexts/MenuContext';
 import { Meal } from '../../types/menuTypes';
 import AppError from '../common/AppError';
-import { AddSpinner } from '../common/AppSpinners';
+import Spinner from '../common/Spinner';
 import { PrimaryBtn, SecondaryBtn } from '../common/Buttons';
 import HeadingPrimary from '../common/HeadingPrimary';
-import { Input, SelectCategory } from './AddFormInput';
+import { Input, SelectCategory } from './CreateMealInput';
 
 const schema = yup.object().shape({
 	name: yup.string().min(3).max(36).required('Name is required'),
@@ -40,7 +40,7 @@ const schema = yup.object().shape({
 	category: yup.string().required('Choose a food category')
 });
 
-const AddForm = () => {
+const CreateMealForm = () => {
 	const iClass =
 		'absolute right-4 top-1/2 -translate-y-1/2 text-sm text-neutral-300';
 	const { createMeal, error } = useMenu();
@@ -58,7 +58,10 @@ const AddForm = () => {
 		reset();
 	};
 
-	if (isSubmitting) return <AddSpinner />;
+	if (isSubmitting)
+		return (
+			<Spinner type="auth" css="flex w-80 justify-center !justify-self-end" />
+		);
 
 	if (error)
 		return (
@@ -120,4 +123,4 @@ const AddForm = () => {
 	);
 };
 
-export default AddForm;
+export default CreateMealForm;

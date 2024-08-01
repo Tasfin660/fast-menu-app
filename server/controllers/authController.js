@@ -43,7 +43,7 @@ const register = async (req, res) => {
     const newUser = new UserModel({
       username,
       image,
-      role: 'user',
+      role: 'User',
       meals: [],
       joined: date,
       password: hashedPassword,

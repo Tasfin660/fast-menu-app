@@ -4,7 +4,7 @@ import { FaImage, FaLock, FaUser } from 'react-icons/fa6';
 import * as yup from 'yup';
 import { useUser } from '../../contexts/UserContext';
 import type { Register } from '../../types/userTypes';
-import { AuthSpinner } from '../common/AppSpinners';
+import Spinner from '../common/Spinner';
 import { PrimaryBtn } from '../common/Buttons';
 import HeadingPrimary from '../common/HeadingPrimary';
 
@@ -35,7 +35,7 @@ const RegisterForm = () => {
 		reset();
 	};
 
-	if (isSubmitting) return <AuthSpinner />;
+	if (isSubmitting) return <Spinner type="auth" />;
 
 	return (
 		<form
