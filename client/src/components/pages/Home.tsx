@@ -1,5 +1,6 @@
 import { useUser } from '../../contexts/UserContext';
 import AppError from '../common/AppError';
+import User from '../User';
 import UserMeals from '../UserMeals';
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
 
 	return (
 		<div className="grid h-full grid-cols-2 rounded-2xl bg-white shadow-shadow-menu">
-			<div className="border-r-[1px] border-neutral-300/30">&nbsp;</div>
+			<User />
 			<UserMeals />
 		</div>
 	);

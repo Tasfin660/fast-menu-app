@@ -15,6 +15,8 @@ const Auth = () => {
 
 	useEffect(() => {
 		resetAuthStatus();
+		if (formId !== 'login' && formId !== 'register')
+			navigate('/404', { replace: true });
 	}, [formId]);
 
 	return (
@@ -35,21 +37,27 @@ const Auth = () => {
 					</span>
 				</p>
 			</div>
-			{formId === 'login' ? <LoginForm /> : <RegisterForm />}
-			{formId === 'login' ? (
-				<div className="flex flex-col items-center justify-self-end text-sm">
-					<p>Don't have a account?</p>
-					<Link to="/users/register" className="font-medium text-primary">
-						Register
-					</Link>
-				</div>
-			) : (
-				<div className="flex flex-col items-center justify-self-end text-sm">
-					<p>Already have a account?</p>
-					<Link to="/users/login" className="font-medium text-primary">
-						Login
-					</Link>
-				</div>
+			{formId === 'login' && (
+				<>
+					<LoginForm />
+					<div className="flex flex-col items-center justify-self-end text-sm">
+						<p>Don't have a account?</p>
+						<Link to="/users/register" className="font-medium text-primary">
+							Register
+						</Link>
+					</div>
+				</>
+			)}
+			{formId === 'register' && (
+				<>
+					<RegisterForm />
+					<div className="flex flex-col items-center justify-self-end text-sm">
+						<p>Already have a account?</p>
+						<Link to="/users/login" className="font-medium text-primary">
+							Login
+						</Link>
+					</div>
+				</>
 			)}
 		</main>
 	);

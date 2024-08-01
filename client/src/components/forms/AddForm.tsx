@@ -13,7 +13,7 @@ import HeadingPrimary from '../common/HeadingPrimary';
 import { Input, SelectCategory } from './AddFormInput';
 
 const schema = yup.object().shape({
-	name: yup.string().min(3).max(20).required('Name is required'),
+	name: yup.string().min(3).max(36).required('Name is required'),
 	image: yup.string().required('Image is required'),
 	price: yup
 		.number()

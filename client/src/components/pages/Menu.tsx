@@ -39,8 +39,8 @@ const Menu = () => {
 			style={{
 				gridTemplateRows: `repeat(${Math.ceil(meals.length / 3)}, max-content)`
 			}}>
-			{meals.map(meal => (
-				<Meal key={meal._id} meal={meal} />
+			{meals.map((meal, i) => (
+				<Meal key={meal._id} index={i} meal={meal} />
 			))}
 		</main>
 	);

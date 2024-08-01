@@ -19,7 +19,11 @@ const LoadingImage = ({
 
 	return (
 		<>
-			{imgLoading && <img src={lImgSrc} alt="meal" className={lImgStyle} />}
+			{imgLoading && (
+				<div className={lImgStyle}>
+					<img src={lImgSrc} alt="meal" />
+				</div>
+			)}
 			<img
 				src={src}
 				alt={alt}

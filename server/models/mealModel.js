@@ -25,6 +25,10 @@ const MealSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
+  calorie: {
+    type: Number,
+    required: true,
+  },
   rate: {
     type: Number,
     required: true,

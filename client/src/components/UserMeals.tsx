@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
-import type { Meal } from '../types/mealTypes';
-import UserMeal from './UserMeal';
 import { useUser } from '../contexts/UserContext';
+import AppError from './common/AppError';
+import { MenuSpinner } from './common/AppSpinners';
+import UserMeal from './UserMeal';
 
 const UserMeals = () => {
-	const { userMeals, getUserMeals } = useUser();
+	const { userMeals, loading, error, getUserMeals } = useUser();
 	const length = userMeals.length;
 
 	useEffect(() => {
@@ -29,18 +30,29 @@ const UserMeals = () => {
 					className="rounded-full bg-primary-light p-2"
 				/>
 			</div>
-			<ul className="app-scrollbar flex h-full flex-col gap-6 overflow-y-scroll pb-10 pl-4 pr-6 pt-2">
-				{length === 0 && (
-					<div className="flex flex-col items-center gap-4">
-						<img src="/list.png" alt="item" className="w-16 opacity-10" />
-						<p className="font-medium opacity-40">
-							No meals have been added to the list yet.
-						</p>
-					</div>
+			<ul className="app-scrollbar flex h-full flex-col items-center gap-6 overflow-y-scroll pb-10 pl-4 pr-6 pt-2">
+				{loading && <MenuSpinner />}
+				{error && (
+					<AppError
+						src="/server-error.png"
+						title="Internal server error."
+						message="We’re sorry, but it looks like something went wrong on our end."
+					/>
 				)}
-				{userMeals.map(meal => (
-					<UserMeal key={meal._id} meal={meal} />
-				))}
+				{!loading && !error ? (
+					length === 0 ? (
+						<div className="flex flex-col items-center gap-4">
+							<img src="/list.png" alt="item" className="w-16 opacity-10" />
+							<p className="font-medium opacity-40">
+								No meals have been added to the list yet.
+							</p>
+						</div>
+					) : (
+						userMeals.map(meal => <UserMeal key={meal._id} meal={meal} />)
+					)
+				) : (
+					''
+				)}
 			</ul>
 		</div>
 	);

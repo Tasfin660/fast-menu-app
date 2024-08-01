@@ -69,7 +69,7 @@ const reducer = (state: UserState, action: Action) => {
 				loading: false
 			};
 		case 'error':
-			return { ...state, error: true };
+			return { ...state, loading: false, error: true };
 		default:
 			throw new Error('Action unknown!');
 	}

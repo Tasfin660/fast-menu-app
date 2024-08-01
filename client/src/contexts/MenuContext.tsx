@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createContext, useContext, useReducer } from 'react';
+import { useCookies } from 'react-cookie';
 import type {
 	Action,
 	Children,
@@ -7,7 +8,6 @@ import type {
 	MenuContext,
 	MenuState
 } from '../types/menuTypes';
-import { useCookies } from 'react-cookie';
 import { useUser } from './UserContext';
 
 const MenuContext = createContext<undefined | (MenuContext & MenuState)>(

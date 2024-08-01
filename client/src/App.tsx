@@ -1,5 +1,5 @@
-import { UserProvider } from './contexts/UserContext';
 import { MenuProvider } from './contexts/MenuContext';
+import { UserProvider } from './contexts/UserContext';
 import Router from './Router';
 
 const App = () => {

@@ -1,10 +1,10 @@
 import { FaCrown } from 'react-icons/fa';
+import { IoIosCheckmarkCircle, IoIosCloseCircle } from 'react-icons/io';
 import { IoLogIn, IoLogOut } from 'react-icons/io5';
 import { MdOutlineBookmarkAdd } from 'react-icons/md';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useUser } from '../../contexts/UserContext';
-import { IoIosCheckmarkCircle, IoIosCloseCircle } from 'react-icons/io';
 import { useMenu } from '../../contexts/MenuContext';
+import { useUser } from '../../contexts/UserContext';
 import LoadingImage from '../common/LoadingImage';
 
 const Navbar = () => {
