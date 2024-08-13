@@ -35,7 +35,7 @@ const Menu = () => {
 
 	return (
 		<main
-			className="app-scrollbar shadow-shadowapp grid h-full grid-cols-[repeat(3,350px)] items-start justify-between gap-y-9 overflow-y-scroll rounded-lg py-1 pl-3 pr-6"
+			className="app-scrollbar smooth-rendering shadow-shadowapp grid h-full grid-cols-[repeat(3,350px)] items-start justify-between gap-y-9 overflow-y-scroll rounded-lg py-1 pl-3 pr-6"
 			style={{
 				gridTemplateRows: `repeat(${Math.ceil(meals.length / 3)}, max-content)`
 			}}>

@@ -17,7 +17,7 @@ const Home = () => {
 		);
 
 	return (
-		<div className="grid h-full grid-cols-2 rounded-2xl bg-white shadow-shadow-menu">
+		<div className="grid h-full grid-cols-2 overflow-hidden rounded-2xl bg-white shadow-shadow-menu">
 			<User />
 			<UserMeals />
 		</div>

@@ -10,7 +10,7 @@ const UserMeal = ({ meal }: { meal: UserMeal }) => {
 		'rounded-full border-2 h-[55px] object-cover border-transparent bg-white p-1 shadow-shadow-menu duration-300';
 
 	return (
-		<li className="meal-item grid w-full grid-cols-[55px,max-content,1fr,max-content] items-center rounded-full shadow-shadow-menu">
+		<li className="meal-item grid w-full grid-cols-[55px,max-content,1fr,max-content] items-center rounded-full bg-neutral-800 shadow-shadow-menu">
 			<LoadingImage
 				lImgSrc="/meal-short.png"
 				lImgStyle={imgStyle}

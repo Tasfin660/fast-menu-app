@@ -2,16 +2,20 @@ import { useState } from 'react';
 import { BsMoonStarsFill } from 'react-icons/bs';
 import { IoSunny } from 'react-icons/io5';
 
+(globalThis as any)['theme'] = 'light' || 'dark';
+
 const ToggleTheme = () => {
-	const [theme, setTheme] = useState('light');
+	const [theme, setTheme] = useState(globalThis.getTheme());
 
 	const handleTheme = () => {
-		setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+		const th = theme === 'light' ? 'dark' : 'light';
+		globalThis.setTheme(th);
+		setTheme(th);
 	};
 
 	return (
 		<button
-			className="relative flex items-center gap-4 rounded-full p-2 text-sm text-primary shadow-shadow-app"
+			className="bg-theme-component-bg relative flex items-center gap-4 rounded-full p-2 text-sm text-primary shadow-shadow-app duration-300"
 			onClick={handleTheme}>
 			<IoSunny
 				className={`z-10 ${theme === 'light' && 'text-text-light duration-300'}`}
@@ -24,5 +28,5 @@ const ToggleTheme = () => {
 		</button>
 	);
 };
-// 15 53
+
 export default ToggleTheme;

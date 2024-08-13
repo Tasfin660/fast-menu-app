@@ -98,6 +98,8 @@
 	width: 100%;
 	border-left: 15px solid var(--color-text-light);
 	border-right: 15px solid var(--color-text-light);
+	transition: all 0.3s;
+	border-color: var(--theme-color-component-bg);
 }
 
 .header-message::before {

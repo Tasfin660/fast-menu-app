@@ -13,7 +13,7 @@ const UserMeals = () => {
 	}, []);
 
 	return (
-		<div className="overflow-hidden border-l-[1px] border-neutral-300/30 p-6">
+		<div className="overflow-hidden border-l-[1px] border-neutral-300/30 bg-neutral-900 p-6">
 			<div className="grid grid-cols-[1fr,max-content,50px] items-center gap-4 pb-4">
 				<h1 className="font-font-secondary text-2xl font-semibold">
 					Favourite Meals List
@@ -30,7 +30,7 @@ const UserMeals = () => {
 					className="rounded-full bg-primary-light p-2"
 				/>
 			</div>
-			<ul className="app-scrollbar flex h-full flex-col items-center gap-6 overflow-y-scroll pb-10 pl-4 pr-6 pt-2">
+			<ul className="app-scrollbar smooth-rendering flex h-full flex-col items-center gap-6 overflow-y-scroll pb-10 pl-4 pr-6 pt-2">
 				{loading && <Spinner type="app" />}
 				{error && (
 					<AppError

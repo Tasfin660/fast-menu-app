@@ -20,7 +20,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className="col-start-2 col-end-3 flex items-center justify-between overflow-hidden rounded-full p-2 pr-4 shadow-shadow-app">
+		<nav className="bg-theme-component-bg col-start-2 col-end-3 flex items-center justify-between overflow-hidden rounded-full p-2 pr-4 shadow-shadow-app duration-300">
 			<figure className="flex items-center">
 				<LoadingImage
 					lImgSrc="/user-none-big.png"

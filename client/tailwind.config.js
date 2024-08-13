@@ -23,7 +23,10 @@ export default {
 				'text-light': 'var(--color-text-light)',
 				'text-dark': 'var(--color-text-dark)',
 				'main-bg': 'var(--color-main-bg)',
-				'text-color': 'var(--color-text)'
+				'text-color': 'var(--color-text)',
+				'theme-main-bg': 'var(--theme-color-main-bg)',
+				'theme-app-bg': 'var(--theme-color-app-bg)',
+				'theme-component-bg': 'var(--theme-color-component-bg)'
 			},
 			backgroundImage: {
 				'primary-gradient': 'var(--color-primary-gradient)'

@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 body {
-	overscroll-behavior: smooth;
-	background-image: linear-gradient(135deg, white, var(--color-primary-light));
+	background: var(--theme-color-main-bg);
+	transition: all 0.3s;
 }
 
 .active {
