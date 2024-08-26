@@ -1,154 +1,1026 @@
-[
-	{
-		"name": "",
-		"image": "",
-		"price": 3,
-		"tag": "",
-		"category": "fried-chicken",
-		"poeple": [
-			{
-				"$oid": ""
-			}
-		],
-		"calorie": 34,
-		"rate": 3,
-		"likes": [
-			{
-				"$oid": ""
-			}
-		]
-	},
-	{
-		"name": "",
-		"image": "",
-		"price": 3,
-		"tag": "",
-		"category": "french-fries",
-		"poeple": [
-			{
-				"$oid": ""
-			}
-		],
-		"calorie": 34,
-		"rate": 3,
-		"likes": [
-			{
-				"$oid": ""
-			}
-		]
-	},
-	{
-		"name": "",
-		"image": "",
-		"price": 3,
-		"tag": "",
-		"category": "burger",
-		"poeple": [
-			{
-				"$oid": ""
-			}
-		],
-		"calorie": 34,
-		"rate": 3,
-		"likes": [
-			{
-				"$oid": ""
-			}
-		]
-	},
-	{
-		"name": "",
-		"image": "",
-		"price": 3,
-		"tag": "",
-		"category": "kebab",
-		"poeple": [
-			{
-				"$oid": ""
-			}
-		],
-		"calorie": 34,
-		"rate": 3,
-		"likes": [
-			{
-				"$oid": ""
-			}
-		]
-	},
-	{
-		"name": "",
-		"image": "",
-		"price": 3,
-		"tag": "",
-		"category": "hotdog",
-		"poeple": [
-			{
-				"$oid": ""
-			}
-		],
-		"calorie": 34,
-		"rate": 3,
-		"likes": [
-			{
-				"$oid": ""
-			}
-		]
-	},
-	{
-		"name": "",
-		"image": "",
-		"price": 3,
-		"tag": "",
-		"category": "pizza",
-		"poeple": [
-			{
-				"$oid": ""
-			}
-		],
-		"calorie": 34,
-		"rate": 3,
-		"likes": [
-			{
-				"$oid": ""
-			}
-		]
-	},
-	{
-		"name": "",
-		"image": "",
-		"price": 3,
-		"tag": "",
-		"category": "taco",
-		"poeple": [
-			{
-				"$oid": ""
-			}
-		],
-		"calorie": 34,
-		"rate": 3,
-		"likes": [
-			{
-				"$oid": ""
-			}
-		]
-	},
-	{
-		"name": "",
-		"image": "",
-		"price": 3,
-		"tag": "",
-		"category": "drinks",
-		"poeple": [
-			{
-				"$oid": ""
-			}
-		],
-		"calorie": 34,
-		"rate": 3,
-		"likes": [
-			{
-				"$oid": ""
-			}
-		]
-	}
-]
+[{
+  "_id": {
+    "$oid": "66cc3334630b24b26d59ec0c"
+  },
+  "name": "Margherita Magic",
+  "image": "https://www.perfectitaliano.com.au/content/dam/perfectitaliano-aus/recipe/0_desktop/Desktop-Margherita-Pizza.jpg",
+  "price": 11.39,
+  "tag": "Fresh",
+  "category": "pizza",
+  "people": 4,
+  "calorie": 300,
+  "rate": 3.5,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc33f7630b24b26d59ec12"
+  },
+  "name": "Mediterranean Medley",
+  "image": "https://www.jocooks.com/wp-content/uploads/2012/03/margherita-pizza-11.jpg",
+  "price": 10.25,
+  "tag": "Sweet",
+  "category": "pizza",
+  "people": 3,
+  "calorie": 250,
+  "rate": 3.2,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc3463630b24b26d59ec16"
+  },
+  "name": "Veggie Supreme",
+  "image": "https://pisapizza.ca/wp-content/uploads/2024/05/greek-pizza-21-001.jpg",
+  "price": 10.11,
+  "tag": "Veggie",
+  "category": "pizza",
+  "people": 4,
+  "calorie": 200,
+  "rate": 2.8,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc34cb630b24b26d59ec1c"
+  },
+  "name": "BBQ Chicken Delight",
+  "image": "https://embed.widencdn.net/img/beef/pz4eba64j5/1120x840px/beef-pepper-and-onion-pizza-horizontal.tif?keep=c&u=7fueml",
+  "price": 14.65,
+  "tag": "BBQ",
+  "category": "pizza",
+  "people": 4,
+  "calorie": 400,
+  "rate": 3.9,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc352b630b24b26d59ec20"
+  },
+  "name": "Four Cheese Fantasy",
+  "image": "https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg",
+  "price": 10,
+  "tag": "Cheese",
+  "category": "pizza",
+  "people": 2,
+  "calorie": 235,
+  "rate": 2.5,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc35c8630b24b26d59ec25"
+  },
+  "name": "Spinach & Artichoke Supreme",
+  "image": "https://www.tasteofhome.com/wp-content/uploads/2019/12/The-Best-Sausage-Pizzas_EXPS_PPMBZ24_245369_DR_11_07_12b.jpg?fit=700,700",
+  "price": 12.25,
+  "tag": "Veggie",
+  "category": "pizza",
+  "people": 4,
+  "calorie": 270,
+  "rate": 2.9,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc364b630b24b26d59ec29"
+  },
+  "name": "Crispy Thin Delight",
+  "image": "https://content.jdmagicbox.com/comp/hanumangarh/v1/9999p1552.1552.180604153919.s1v1/catalogue/pizza-point-hanumangarh-town-hanumangarh-pizza-outlets-0f7a5mq59g.jpg",
+  "price": 13.65,
+  "tag": "Tasty",
+  "category": "pizza",
+  "people": 4,
+  "calorie": 320,
+  "rate": 3.5,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc36c2630b24b26d59ec2d"
+  },
+  "name": "Pepperoni Bliss",
+  "image": "https://istoedinheiro.com.br/wp-content/uploads/sites/17/2023/07/feche-a-pizza-italiana-sobre-o-queijo-cole-o-foco-seletivo-generativo-ai-1258-153047.jpeg",
+  "price": 13.25,
+  "tag": "Pepp",
+  "category": "pizza",
+  "people": 4,
+  "calorie": 300,
+  "rate": 3.6,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc374a630b24b26d59ec31"
+  },
+  "name": "Buffalo Chicken Crunch",
+  "image": "https://recipes.net/wp-content/uploads/2024/01/how-to-season-ground-beef-for-pizza-topping-1705300509.jpg",
+  "price": 16.4,
+  "tag": "Meat",
+  "category": "pizza",
+  "people": 4,
+  "calorie": 345,
+  "rate": 4.3,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc37af630b24b26d59ec35"
+  },
+  "name": "Sun-Dried Tomato Twist",
+  "image": "https://myfoodbook.com.au/sites/default/files/styles/schema_img/public/recipe_photo/Whisk_PI_190919_Pizzas_015_VEGETARIAN.jpg",
+  "price": 12.99,
+  "tag": "Veggie",
+  "category": "pizza",
+  "people": 4,
+  "calorie": 270,
+  "rate": 2.7,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc3879630b24b26d59ec39"
+  },
+  "name": "Fiesta Crunch",
+  "image": "https://mojo.generalmills.com/api/public/content/GmHhoT5mr0Sue2oMxdyEig_webp_base.webp?v=868009f1&t=e724eca7b3c24a8aaa6e089ed9e611fd",
+  "price": 3.99,
+  "tag": "Meat",
+  "category": "taco",
+  "people": 1,
+  "calorie": 280,
+  "rate": 3.2,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc38d8630b24b26d59ec3f"
+  },
+  "name": "Sunset Chipotle",
+  "image": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2024-04-tacos%2Ftacos-490",
+  "price": 4.49,
+  "tag": "Fresh",
+  "category": "taco",
+  "people": 1,
+  "calorie": 320,
+  "rate": 3.1,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc3916630b24b26d59ec43"
+  },
+  "name": "Baja Blaze",
+  "image": "https://www.onceuponachef.com/images/2023/08/Beef-Tacos.jpg",
+  "price": 5.29,
+  "tag": "Veggie",
+  "category": "taco",
+  "people": 1,
+  "calorie": 360,
+  "rate": 2.8,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc394b630b24b26d59ec47"
+  },
+  "name": "Carnitas Verde",
+  "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/2/29/0/0149359_Making-Taco_s4x3.jpg.rend.hgtvcom.1280.1280.suffix/1371603491866.webp",
+  "price": 5.49,
+  "tag": "Capsicum",
+  "category": "taco",
+  "people": 1,
+  "calorie": 350,
+  "rate": 3,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc3990630b24b26d59ec4f"
+  },
+  "name": "Spicy Tomato Tango",
+  "image": "https://i.ytimg.com/vi/mixdagZ-fwI/maxresdefault.jpg",
+  "price": 4.99,
+  "tag": "Veggie",
+  "category": "taco",
+  "people": 1,
+  "calorie": 330,
+  "rate": 3.1,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc3a27630b24b26d59ec57"
+  },
+  "name": "Chipotle Carnivore",
+  "image": "https://res.cloudinary.com/hksqkdlah/image/upload/ar_1:1,c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_344/SFS_GroundBeefTacos-18_llgjaf",
+  "price": 5.49,
+  "tag": "Meat",
+  "category": "taco",
+  "people": 1,
+  "calorie": 380,
+  "rate": 3.7,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc3b25630b24b26d59ec5c"
+  },
+  "name": "Golden Crunch Fries",
+  "image": "https://images.immediate.co.uk/production/volatile/sites/30/2021/03/French-fries-b9e3e0c.jpg?resize=900%2C471",
+  "price": 3.5,
+  "tag": "Crispy",
+  "category": "french-fries",
+  "people": 1,
+  "calorie": 320,
+  "rate": 4.7,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc3b59630b24b26d59ec5e"
+  },
+  "name": "Luxury Delight Fries",
+  "image": "https://images.themodernproper.com/billowy-turkey/production/posts/2022/Homemade-French-Fries_8.jpg?w=960&h=540&q=82&fm=jpg&fit=crop&dm=1662474181&s=df605b62c9fee026dcef2c0301541888",
+  "price": 5.25,
+  "tag": "Luxurious",
+  "category": "french-fries",
+  "people": 1,
+  "calorie": 350,
+  "rate": 4.9,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc3b83630b24b26d59ec60"
+  },
+  "name": "Garlic Herb Fries",
+  "image": "https://www.recipetineats.com/tachyon/2022/09/Fries-with-rosemary-salt_1.jpg",
+  "price": 3.75,
+  "tag": "Aromatic",
+  "category": "french-fries",
+  "people": 1,
+  "calorie": 330,
+  "rate": 4.8,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc3c3a630b24b26d59ec80"
+  },
+  "name": "Spicy Twist Fries",
+  "image": "https://thissillygirlskitchen.com/wp-content/uploads/2020/02/homemade-french-fries-8-1.jpg",
+  "price": 4,
+  "tag": "Zesty",
+  "category": "french-fries",
+  "people": 3,
+  "calorie": 340,
+  "rate": 4.5,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc66f38e344393dedc441b"
+  },
+  "name": "Crispy Crunch Supreme",
+  "image": "https://hips.hearstapps.com/hmg-prod/images/delish-230502-06-fried-chicken-0887-eb-index-645ec6fb0ca64.jpg?crop=0.6666666666666667xw:1xh;center,top&resize=1200:*",
+  "price": 12.99,
+  "tag": "Supreme",
+  "category": "fried-chicken",
+  "people": 6,
+  "calorie": 680,
+  "rate": 4.5,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc67698e344393dedc4429"
+  },
+  "name": "Golden Glaze Delight",
+  "image": "https://christieathome.com/wp-content/uploads/2020/10/Facetune_06-10-2020-15-37-58-scaled.jpg",
+  "price": 10.49,
+  "tag": "Glaze",
+  "category": "fried-chicken",
+  "people": 4,
+  "calorie": 620,
+  "rate": 4.2,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc67998e344393dedc442b"
+  },
+  "name": "Spicy Southern Kick",
+  "image": "https://www.kitchensanctuary.com/wp-content/uploads/2019/08/Korean-Fried-Chicken-square-FS-New-7377.jpg",
+  "price": 11.79,
+  "tag": "Spicy",
+  "category": "fried-chicken",
+  "people": 4,
+  "calorie": 710,
+  "rate": 4.7,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc67c38e344393dedc442d"
+  },
+  "name": "Classic Crispy Crunch",
+  "image": "https://tornadoughalli.com/wp-content/uploads/2022/01/GRANDMAS-FRIED-CHICKEN-RECIPE-2-1-500x500.jpg",
+  "price": 9.99,
+  "tag": "Classic",
+  "category": "fried-chicken",
+  "people": 3,
+  "calorie": 650,
+  "rate": 4,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc68788e344393dedc443d"
+  },
+  "name": "Sweet Heat Haven",
+  "image": "https://www.browneyedbaker.com/wp-content/uploads/2020/12/buttermilk-fried-chicken-12-square.jpg",
+  "price": 11.29,
+  "tag": "weet Heat",
+  "category": "fried-chicken",
+  "people": 4,
+  "calorie": 690,
+  "rate": 4.3,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc68998e344393dedc443f"
+  },
+  "name": "Crunchy Ranch Fever",
+  "image": "https://airfrycook.com/wp-content/uploads/2022/10/korean-chicken-air-fryer-4-1-735x735.jpg",
+  "price": 10.99,
+  "tag": "Ranch",
+  "category": "fried-chicken",
+  "people": 3,
+  "calorie": 660,
+  "rate": 4.4,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc69d98e344393dedc4449"
+  },
+  "name": "Buffalo Heatwave",
+  "image": "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/DA2CE7B2-213D-47CD-BC65-8746BF251207/Derivates/ac919776-333a-491f-adeb-f584db66502f.jpg",
+  "price": 11.79,
+  "tag": "Buffalo",
+  "category": "fried-chicken",
+  "people": 6,
+  "calorie": 490,
+  "rate": 4.6,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6a058e344393dedc444b"
+  },
+  "name": "Zesty Lemon Pepper",
+  "image": "https://www.cookinwithmima.com/wp-content/uploads/2022/03/crunchy-fried-chicken-500x500.jpg",
+  "price": 10.59,
+  "tag": "Zesty",
+  "category": "fried-chicken",
+  "people": 4,
+  "calorie": 460,
+  "rate": 4.7,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6a298e344393dedc444d"
+  },
+  "name": "Smoky Chipotle Crunch",
+  "image": "https://www.kitchensanctuary.com/wp-content/uploads/2020/05/Crispy-Fried-Chicken-square-FS-5.jpg",
+  "price": 12.49,
+  "tag": "Smoky",
+  "category": "fried-chicken",
+  "people": 4,
+  "calorie": 510,
+  "rate": 4.8,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6aa98e344393dedc4455"
+  },
+  "name": "Spicy Sizzler",
+  "image": "https://cookingorgeous.com/wp-content/uploads/2021/06/lamb-shish-kebab-20.jpg",
+  "price": 12.99,
+  "tag": "Spicy",
+  "category": "kebab",
+  "people": 3,
+  "calorie": 450,
+  "rate": 4.5,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6af78e344393dedc4462"
+  },
+  "name": "Tender Delight",
+  "image": "https://joyfoodsunshine.com/wp-content/uploads/2022/06/chicken-kebabs-recipe-1.jpg",
+  "price": 11.49,
+  "tag": "Tender",
+  "category": "kebab",
+  "people": 3,
+  "calorie": 400,
+  "rate": 4.7,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6b2f8e344393dedc4466"
+  },
+  "name": "Smoky Fusion",
+  "image": "https://images.themodernproper.com/billowy-turkey/production/posts/ChickenKebabs_8.jpg?w=1200&h=1200&q=60&fm=jpg&fit=crop&dm=1691095944&s=5542f9d00dd6192a9c4cc79349954149",
+  "price": 13.75,
+  "tag": "Smoky",
+  "category": "kebab",
+  "people": 6,
+  "calorie": 480,
+  "rate": 4.3,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6b7b8e344393dedc4468"
+  },
+  "name": "Herb Grilled",
+  "image": "https://cooktoria.com/wp-content/uploads/2018/06/Chicken-Kebabs-SQ-2-2.jpg",
+  "price": 10.25,
+  "tag": "Herb",
+  "category": "kebab",
+  "people": 3,
+  "calorie": 350,
+  "rate": 4.6,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6bc28e344393dedc446a"
+  },
+  "name": "Zesty Flame",
+  "image": "https://khinskitchen.com/wp-content/uploads/2024/03/chicken-kebab-04.jpg",
+  "price": 12.5,
+  "tag": "Zesty",
+  "category": "kebab",
+  "people": 4,
+  "calorie": 470,
+  "rate": 4.4,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6be58e344393dedc446c"
+  },
+  "name": "BBQ Bliss",
+  "image": "https://images.themodernproper.com/billowy-turkey/production/posts/GrilledChickenShawarmaKebab_12.jpg?w=1200&h=1200&q=60&fm=jpg&fit=crop&dm=1688867975&s=fecb307558188b32741e1738a61eb137",
+  "price": 11.99,
+  "tag": "BBQ",
+  "category": "kebab",
+  "people": 4,
+  "calorie": 460,
+  "rate": 4.2,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6c3f8e344393dedc446e"
+  },
+  "name": "Classic Kebab",
+  "image": "https://images.getrecipekit.com/v1624462183_qjzotbw2hdzlvdcjoarz.jpg?aspect_ratio=16:9&quality=90&",
+  "price": 9.99,
+  "tag": "Classic",
+  "category": "kebab",
+  "people": 2,
+  "calorie": 420,
+  "rate": 4.1,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6c5f8e344393dedc4470"
+  },
+  "name": "Mediterranean Magic",
+  "image": "https://www.licious.in/blog/wp-content/uploads/2020/12/Chicken-Kebab.jpg",
+  "price": 13.25,
+  "tag": "Mediterranean",
+  "category": "kebab",
+  "people": 4,
+  "calorie": 430,
+  "rate": 4.6,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6d0c8e344393dedc4476"
+  },
+  "name": "Spciy Cheese",
+  "image": "https://embed.widencdn.net/img/mccormick/dy2orpqxvj/800x800px/52%20SPICY%20CRUNCHY%20BURGER.jpeg?keep=c&crop=yes&u=a3rg0s&use=aeriv",
+  "price": 8.99,
+  "tag": "Meat",
+  "category": "burger",
+  "people": 1,
+  "calorie": 350,
+  "rate": 3.7,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6d978e344393dedc447c"
+  },
+  "name": "Classic Chicago Dog",
+  "image": "https://realfood.tesco.com/media/images/1400x919-HOTDOG-11f329fc-48b2-42d2-ab14-d94a7562a9c2-0-1400x919.jpg",
+  "price": 4.99,
+  "tag": "Classic",
+  "category": "hotdog",
+  "people": 2,
+  "calorie": 350,
+  "rate": 4.5,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6dcd8e344393dedc4480"
+  },
+  "name": "Spicy Tex-Mex Dog",
+  "image": "https://www.katiescucina.com/wp-content/uploads/2022/05/Air-Fryer-Hot-Dog-square.jpg",
+  "price": 5.49,
+  "tag": "Spicy",
+  "category": "hotdog",
+  "people": 3,
+  "calorie": 400,
+  "rate": 4.7,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6dfd8e344393dedc4482"
+  },
+  "name": "Garlic Parmesan Dog",
+  "image": "https://www.brit.co/media-library/gourmet-hot-dogs.png?id=33770089&width=600&height=600&quality=90&coordinates=0%2C176%2C0%2C164",
+  "price": 5.69,
+  "tag": "Garlic",
+  "category": "hotdog",
+  "people": 1,
+  "calorie": 420,
+  "rate": 4.4,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6e2e8e344393dedc4484"
+  },
+  "name": "Cheesy Nacho Dog",
+  "image": "https://www.vvsupremo.com/wp-content/uploads/2016/02/900X570_Mexican-Style-Hot-Dogs.jpg",
+  "price": 5.29,
+  "tag": "Hawaiian",
+  "category": "hotdog",
+  "people": 1,
+  "calorie": 380,
+  "rate": 4.2,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6e598e344393dedc4486"
+  },
+  "name": "Maple Bacon Dog",
+  "image": "https://tvazteca.brightspotcdn.com/dims4/default/28fd378/2147483647/strip/true/crop/1920x1080+0+0/resize/928x522!/format/jpg/quality/90/?url=http%3A%2F%2Ftv-azteca-brightspot.s3.amazonaws.com%2F20%2Fa1%2F02ec12664589bc436ea1cbbd1fef%2Fgotdog.jpg",
+  "price": 5.89,
+  "tag": "Maple",
+  "category": "hotdog",
+  "people": 1,
+  "calorie": 490,
+  "rate": 4.6,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6e988e344393dedc448a"
+  },
+  "name": "BBQ Bacon Dog",
+  "image": "https://www.thebbqbastard.com/wp-content/uploads/2018/07/Engelse-ontbijt-hotdog-1-12.jpg",
+  "price": 5.99,
+  "tag": "BBQ",
+  "category": "hotdog",
+  "people": 2,
+  "calorie": 500,
+  "rate": 4.8,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6ece8e344393dedc448c"
+  },
+  "name": "Chipotle Ranch Dog",
+  "image": "https://img-3.journaldesfemmes.fr/5s0qcjAGWm3q6DNLG6BWLS9jv8o=/800x600/2b4aa9e4565a4ed982603443592531b9/ccmcms-jdf/39871557.jpg",
+  "price": 5.49,
+  "tag": "Chipotle",
+  "category": "hotdog",
+  "people": 3,
+  "calorie": 430,
+  "rate": 4.5,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc6f068e344393dedc4490"
+  },
+  "name": "Mediterranean Olive Dog",
+  "image": "https://www.gardengourmet.com/sites/default/files/styles/768x768/public/recipes/83393badc124840730cb91e3cd839b93_220516_gg_q3_recipe_hotdogs_v3.jpg?itok=3jhaav8d",
+  "price": 5.39,
+  "tag": "Olive",
+  "category": "hotdog",
+  "people": 3,
+  "calorie": 390,
+  "rate": 4.3,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc72fc8e344393dedc4496"
+  },
+  "name": "Berry Blast Smoothie",
+  "image": "https://recipes.net/wp-content/uploads/2023/05/berry-blast-breakfast-smoothie-recipe_43a3d35abf3c5654c26b47f6af4c7074.jpeg",
+  "price": 4.99,
+  "tag": "Berrylious",
+  "category": "drinks",
+  "people": 1,
+  "calorie": 230,
+  "rate": 4.7,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc735c8e344393dedc4498"
+  },
+  "name": "Berry Smoothie",
+  "image": "https://hungryhealthyhappy.com/wp-content/uploads/2019/09/Blueberry-Smoothie-featured.jpg",
+  "price": 4.65,
+  "tag": "Berry",
+  "category": "drinks",
+  "people": 1,
+  "calorie": 280,
+  "rate": 4.8,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc73ba8e344393dedc449e"
+  },
+  "name": "Tropical Sunset Shake",
+  "image": "https://dailydish.co.uk/wp-content/uploads/2024/05/Sunrise-sunset-tropical-smoothie-recipe.jpg",
+  "price": 5.49,
+  "tag": "Taste",
+  "category": "drinks",
+  "people": 1,
+  "calorie": 280,
+  "rate": 4.6,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc73f88e344393dedc44a2"
+  },
+  "name": "Citrus Zing Cooler",
+  "image": "https://img.freepik.com/premium-photo/tropical-sunrise-smoothie-mix_1048588-177.jpg",
+  "price": 3.75,
+  "tag": "Zesty ",
+  "category": "drinks",
+  "people": 1,
+  "calorie": 150,
+  "rate": 4.2,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc74378e344393dedc44a4"
+  },
+  "name": "Minty Fresh Cooler",
+  "image": "https://www.naturesmiracle.in/images/recipes/c6.jpg",
+  "price": 3.99,
+  "tag": "Cool",
+  "category": "drinks",
+  "people": 1,
+  "calorie": 190,
+  "rate": 4.4,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc74768e344393dedc44a8"
+  },
+  "name": "Mango Tango Delight",
+  "image": "https://img.freepik.com/premium-photo/citrus-mango-delight-fruit-juice_1036998-102775.jpg",
+  "price": 4.79,
+  "tag": "Mango",
+  "category": "drinks",
+  "people": 1,
+  "calorie": 260,
+  "rate": 4.5,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc74b78e344393dedc44ac"
+  },
+  "name": "Caramel Crunch Frappe",
+  "image": "https://www.eatingonadime.com/wp-content/uploads/2023/05/Caramel-Ribbon-Crunch-Frappuccino-200-300KB-10.jpg",
+  "price": 5.25,
+  "tag": "Sweet ",
+  "category": "drinks",
+  "people": 1,
+  "calorie": 320,
+  "rate": 4.7,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66cc750d8e344393dedc44b0"
+  },
+  "name": "Red Goddess Smoothie",
+  "image": "https://www.thelittleepicurean.com/wp-content/uploads/2015/12/sparkling-blackcurrant-raspberry-mocktail-600x600.jpg",
+  "price": 4.65,
+  "tag": "Healthy ",
+  "category": "drinks",
+  "people": 1,
+  "calorie": 180,
+  "rate": 4.4,
+  "likes": [
+    {
+      "$oid": "66cc02eb8d655c35242b1b06"
+    }
+  ],
+  "__v": 0
+}]
