@@ -11,9 +11,15 @@ interface AppError {
 const AppError = ({ src, title, message, type }: AppError) => {
 	return (
 		<div className="my-10 flex h-full flex-col items-center">
-			<img src={src} alt="user none" className="mb-4 w-40 opacity-10" />
-			<span className="text-center font-medium opacity-40">{title}</span>
-			<span className="w-[500px] text-center font-medium opacity-40">
+			<img
+				src={src}
+				alt="user none"
+				className="mb-4 w-40 opacity-10 dark:brightness-[6]"
+			/>
+			<span className="text-center font-medium opacity-40 dark:text-text-light">
+				{title}
+			</span>
+			<span className="w-[500px] text-center font-medium opacity-40 dark:text-text-light">
 				{message}
 			</span>
 			<div className="mt-6 flex items-center gap-4 font-medium">

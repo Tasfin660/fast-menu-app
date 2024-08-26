@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useMenu } from '../../contexts/MenuContext';
-import AppError from '../common/AppError';
-import Spinner from '../common/Spinner';
-import Meal from '../Meal';
+import { useMenu } from '../contexts/MenuContext';
+import AppError from '../components/common/AppError';
+import Spinner from '../components/common/Spinner';
+import Meal from '../components/Meal';
 
 const Menu = () => {
 	const { category } = useParams();

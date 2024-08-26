@@ -97,10 +97,7 @@ const UserProvider = ({ children }: Children) => {
 	const register = async (data: Register) => {
 		resetAuthStatus();
 		try {
-			const res = await axios.post(
-				`${import.meta.env.VITE_BASE_URL}/users/register`,
-				data
-			);
+			const res = await axios.post(`/api/v1/users/register`, data);
 			dispatch({ type: 'auth/status', payload: res.data });
 		} catch (err: unknown) {
 			if (isAxiosError(err)) {
@@ -122,10 +119,7 @@ const UserProvider = ({ children }: Children) => {
 	const login = async (data: Login) => {
 		resetAuthStatus();
 		try {
-			const res = await axios.post(
-				`${import.meta.env.VITE_BASE_URL}/users/login`,
-				data
-			);
+			const res = await axios.post(`/api/v1/users/login`, data);
 			setCookie('jwt', res.data.token, { path: '/' });
 			localStorage.setItem('user', JSON.stringify(res.data.data));
 			dispatch({ type: 'auth/login', payload: res.data.data });
@@ -154,7 +148,7 @@ const UserProvider = ({ children }: Children) => {
 
 	const deleteUser = async () => {
 		try {
-			await axios.delete(`${import.meta.env.VITE_BASE_URL}/users`, {
+			await axios.delete(`/api/v1/users`, {
 				headers: { Authorization: `Bearer ${cookies.jwt}` }
 			});
 			logout();
@@ -170,12 +164,9 @@ const UserProvider = ({ children }: Children) => {
 	const getUserMeals = async () => {
 		dispatch({ type: 'loading' });
 		try {
-			const res = await axios.get(
-				`${import.meta.env.VITE_BASE_URL}/users/meals`,
-				{
-					headers: { Authorization: `Bearer ${cookies.jwt}` }
-				}
-			);
+			const res = await axios.get(`/api/v1/users/meals`, {
+				headers: { Authorization: `Bearer ${cookies.jwt}` }
+			});
 			dispatch({ type: 'meals/get', payload: res.data.data });
 		} catch (err) {
 			dispatch({ type: 'error' });
@@ -185,7 +176,7 @@ const UserProvider = ({ children }: Children) => {
 	const addMeal = async (mealId: string) => {
 		try {
 			await axios.put(
-				`${import.meta.env.VITE_BASE_URL}/users/meals`,
+				`/api/v1/users/meals`,
 				{ mealId },
 				{
 					headers: { Authorization: `Bearer ${cookies.jwt}` }
@@ -203,12 +194,9 @@ const UserProvider = ({ children }: Children) => {
 	const removeMeal = async (mealId: string) => {
 		dispatch({ type: 'loading' });
 		try {
-			await axios.delete(
-				`${import.meta.env.VITE_BASE_URL}/users/meals/${mealId}`,
-				{
-					headers: { Authorization: `Bearer ${cookies.jwt}` }
-				}
-			);
+			await axios.delete(`/api/v1/users/meals/${mealId}`, {
+				headers: { Authorization: `Bearer ${cookies.jwt}` }
+			});
 			dispatch({ type: 'meal/remove', payload: mealId });
 		} catch (err) {
 			dispatch({ type: 'error' });

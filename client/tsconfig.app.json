@@ -1,27 +1,43 @@
 {
 	"compilerOptions": {
-		"composite": true,
-		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-		"target": "ESNext",
-		"useDefineForClassFields": true,
-		"lib": ["ESNext", "DOM", "DOM.Iterable"],
-		"module": "ESNext",
-		"skipLibCheck": true,
+		"composite": true, // Enable composite projects (for project references)
+		"target": "ESNext", // Specify ECMAScript target version
+		"useDefineForClassFields": true, // Use the `define` keyword for class fields in emitted code
+		"lib": ["ESNext", "DOM", "DOM.Iterable"], // Specify library files to be included in the compilation
 
-		/* Bundler mode */
-		"moduleResolution": "bundler",
-		"allowImportingTsExtensions": true,
-		"resolveJsonModule": true,
-		"isolatedModules": true,
-		"moduleDetection": "force",
-		"noEmit": true,
-		"jsx": "react-jsx",
+		/* Module Options */
+		"module": "ESNext", // Specify module code generation
+		"skipLibCheck": true, // Skip type checking of declaration files
 
-		/* Linting */
-		"strict": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noFallthroughCasesInSwitch": true
+		/* Bundler Mode */
+		"moduleResolution": "bundler", // Use bundler-style module resolution (e.g., for Vite)
+		"allowImportingTsExtensions": true, // Allow importing TypeScript files with .ts and .tsx extensions
+		"resolveJsonModule": true, // Include modules imported with .json extension
+		"isolatedModules": true, // Ensure TypeScript files are treated as isolated modules
+		"moduleDetection": "force", // Force module detection (may affect how modules are recognized)
+		"noEmit": true, // Do not emit output (useful for type-checking only)
+
+		/* JSX Options */
+		"jsx": "react-jsx", // Specify JSX code generation mode (for React 17+)
+
+		/* Linting and Code Quality */
+		"strict": true, // Enable all strict type-checking options
+		"noUnusedLocals": true, // Report errors on unused local variables
+		"noUnusedParameters": true, // Report errors on unused parameters
+		"noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statements
+		"allowJs": true,
+		"checkJs": true,
+
+		/* Path Mapping */
+		"paths": {
+			"@/*": ["./src/*"] // Map `@/` to the `src` directory
+		},
+
+		/* Type Definitions */
+		"types": ["vite/client"] // Include type definitions for Vite
 	},
-	"include": ["src"]
+
+	/* File Inclusion and Exclusion */
+	"include": ["**/*"], // Specify files to include in the project
+	"exclude": ["node_modules", "build"] // Exclude specific directories from compilation
 }

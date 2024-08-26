@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+	content: ['../client/index.html', '../client/src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
 		fontFamily: {
 			'font-primary': 'var(--font-primary)',
@@ -26,7 +26,10 @@ export default {
 				'text-color': 'var(--color-text)',
 				'theme-main-bg': 'var(--theme-color-main-bg)',
 				'theme-app-bg': 'var(--theme-color-app-bg)',
-				'theme-component-bg': 'var(--theme-color-component-bg)'
+				'theme-component-bg': 'var(--theme-color-component-bg)',
+				'cl-gray-light': 'var(--color-gray-light)',
+				'cl-gray-neutral': 'var(--color-gray-neutral)',
+				'cl-gray-dark': 'var(--color-gray-dark)'
 			},
 			backgroundImage: {
 				'primary-gradient': 'var(--color-primary-gradient)'

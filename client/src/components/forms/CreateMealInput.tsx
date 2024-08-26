@@ -28,7 +28,7 @@ const Input = ({ span, ph, Icon, iClass, reg }: InputTypes) => {
 				placeholder={ph as string}
 				autoComplete="off"
 				{...reg(ph)}
-				className="w-full rounded-full border-[1px] border-transparent bg-neutral-100 py-2 pl-4 pr-10 shadow-shadow-app outline-none duration-300 placeholder:capitalize hover:bg-neutral-50 focus:border-primary"
+				className="w-full rounded-full border-[1px] border-transparent bg-neutral-100 py-2 pl-4 pr-10 shadow-shadow-app outline-none duration-300 placeholder:capitalize hover:bg-neutral-50 focus:border-primary dark:bg-cl-gray-neutral dark:text-text-light dark:hover:bg-cl-gray-neutral"
 			/>
 			<Icon className={iClass} />
 		</div>

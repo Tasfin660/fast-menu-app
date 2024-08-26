@@ -1,13 +1,24 @@
 {
-  "compilerOptions": {
-    "composite": true,
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    "skipLibCheck": true,
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "noEmit": true
-  },
-  "include": ["vite.config.ts"]
+	"compilerOptions": {
+		"target": "ESNext",                      // Specify ECMAScript target version
+		"lib": ["ESNext"],                       // Include library files for ESNext features
+		"module": "ESNext",                      // Specify module code generation format
+		"skipLibCheck": true,                    // Skip type checking of declaration files
+
+		/* Bundler Mode */
+		"moduleResolution": "Bundler",          // Use bundler-style module resolution (e.g., for Vite)
+		"allowImportingTsExtensions": true,     // Allow importing TypeScript files with .ts and .tsx extensions
+		"isolatedModules": true,                // Ensure TypeScript files are treated as isolated modules
+		"moduleDetection": "force",             // Force module detection (may affect how modules are recognized)
+		"noEmit": true,                         // Do not emit output (useful for type-checking only)
+
+		/* Linting and Code Quality */
+		"strict": true,                         // Enable all strict type-checking options
+		"noUnusedLocals": true,                 // Report errors on unused local variables
+		"noUnusedParameters": true,             // Report errors on unused parameters
+		"noFallthroughCasesInSwitch": true      // Report errors for fallthrough cases in switch statements
+	},
+
+	/* File Inclusion */
+	"include": ["vite.config.ts"]            // Specify files to include in the project
 }

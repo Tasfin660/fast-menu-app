@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { useUser } from '../../contexts/UserContext';
-import LoginForm from '../forms/LoginForm';
-import RegisterForm from '../forms/RegisterForm';
+import { useUser } from '../contexts/UserContext';
+import LoginForm from '../components/forms/LoginForm';
+import RegisterForm from '../components/forms/RegisterForm';
 
 const Auth = () => {
 	const { formId } = useParams();
@@ -21,7 +21,7 @@ const Auth = () => {
 
 	return (
 		<main className="my-10 grid grid-cols-3 gap-16 px-3">
-			<div className="text-sm font-medium">
+			<div className="text-sm font-medium dark:text-text-light">
 				<p>
 					Status:&nbsp;
 					<span
@@ -40,7 +40,7 @@ const Auth = () => {
 			{formId === 'login' && (
 				<>
 					<LoginForm />
-					<div className="flex flex-col items-center justify-self-end text-sm">
+					<div className="flex flex-col items-center justify-self-end text-sm dark:text-text-light">
 						<p>Don't have a account?</p>
 						<Link to="/users/register" className="font-medium text-primary">
 							Register
@@ -51,7 +51,7 @@ const Auth = () => {
 			{formId === 'register' && (
 				<>
 					<RegisterForm />
-					<div className="flex flex-col items-center justify-self-end text-sm">
+					<div className="flex flex-col items-center justify-self-end text-sm dark:text-text-light">
 						<p>Already have a account?</p>
 						<Link to="/users/login" className="font-medium text-primary">
 							Login

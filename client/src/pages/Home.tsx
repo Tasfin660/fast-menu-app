@@ -1,7 +1,7 @@
-import { useUser } from '../../contexts/UserContext';
-import AppError from '../common/AppError';
-import User from '../User';
-import UserMeals from '../UserMeals';
+import { useUser } from '../contexts/UserContext';
+import AppError from '../components/common/AppError';
+import User from '../components/User';
+import UserMeals from '../components/UserMeals';
 
 const Home = () => {
 	const { authState } = useUser();
@@ -17,7 +17,7 @@ const Home = () => {
 		);
 
 	return (
-		<div className="grid h-full grid-cols-2 overflow-hidden rounded-2xl bg-white shadow-shadow-menu">
+		<div className="grid h-full grid-cols-2 overflow-hidden rounded-2xl bg-theme-component-bg shadow-shadow-menu dark:bg-cl-gray-neutral">
 			<User />
 			<UserMeals />
 		</div>

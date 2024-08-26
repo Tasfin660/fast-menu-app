@@ -2,15 +2,32 @@
 	--font-primary: 'Work Sans';
 	--font-secondary: 'Fredoka';
 
-	--color-primary: #ea2027;
 	--color-primary-light: #fde9e9;
+	--color-primary: #ea2027;
 	--color-primary-dark: #bb1a1f;
 	--color-secondary: #f6b93b;
 
 	--color-text-light: #fafafa;
 	--color-text-dark: #262626;
 
-	--color-primary-gradient: linear-gradient(135deg, #ea2027, #bb1a1f);
+	--color-primary-gradient: linear-gradient(
+		135deg,
+		var(--color-primary),
+		var(--color-primary-dark)
+	);
+
+	--theme-color-main-bg: linear-gradient(
+		135deg,
+		white,
+		var(--color-primary-light)
+	);
+
+	--theme-color-app-bg: #fafafa;
+	--theme-color-component-bg: white;
+
+	--color-gray-light: #262626;
+	--color-gray-neutral: #171717;
+	--color-gray-dark: #0a0a0a;
 
 	--box-shadow-primary: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 	--box-shadow-app: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
@@ -18,23 +35,3 @@
 	--box-shadow-menu: rgba(17, 17, 26, 0.05) 0px 1px 0px,
 		rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
-
-/* theme colors */
-:root[theme='light'] {
-	--theme-color-main-bg: linear-gradient(
-		135deg,
-		white,
-		var(--color-primary-light)
-	);
-	--theme-color-app-bg: #fafafa;
-	--theme-color-component-bg: white;
-}
-
-:root[theme='dark'] {
-	--theme-color-main-bg: #0a0a0a;
-	--theme-color-app-bg: #262626;
-	--theme-color-component-bg: #171717;
-}
-/* #0a0a0a
-#171717
-#262626 */

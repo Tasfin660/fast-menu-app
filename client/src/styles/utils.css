@@ -9,6 +9,13 @@
 	border-radius: 1000px;
 }
 
+:root[theme='dark'] {
+	.app-scrollbar::-webkit-scrollbar-track {
+		background-color: var(--color-gray-dark);
+		border-radius: 1000px;
+	}
+}
+
 /* Handle */
 .app-scrollbar::-webkit-scrollbar-thumb {
 	background-color: var(--color-primary);

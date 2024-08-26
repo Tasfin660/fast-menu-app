@@ -45,7 +45,7 @@ const reducer = (state: MenuState, action: Action) => {
 				...state,
 				meals: state.meals.map(meal =>
 					meal._id === action.payload.mealId
-						? { ...meal, likes: [...meal.likes, action.payload.userId] }
+						? { ...meal, likes: [...(meal.likes || ''), action.payload.userId] }
 						: meal
 				)
 			};
@@ -74,9 +74,7 @@ const MenuProvider = ({ children }: Children) => {
 	const getMeals = async (category: string) => {
 		dispatch({ type: 'loading' });
 		try {
-			const res = await axios.get(
-				`${import.meta.env.VITE_BASE_URL}/menu/meals/${category}`
-			);
+			const res = await axios.get(`/api/v1/menu/meals/${category}`);
 			dispatch({ type: 'meals/get', payload: res.data.data });
 		} catch (err) {
 			console.log(err);
@@ -86,7 +84,7 @@ const MenuProvider = ({ children }: Children) => {
 
 	const createMeal = async (data: Meal) => {
 		try {
-			await axios.post(`${import.meta.env.VITE_BASE_URL}/menu/meals`, data, {
+			await axios.post(`/api/v1/menu/meals`, data, {
 				headers: { Authorization: `Bearer ${cookies.jwt}` }
 			});
 		} catch (err) {
@@ -97,7 +95,7 @@ const MenuProvider = ({ children }: Children) => {
 	const likeMeal = async (mealId: string) => {
 		try {
 			await axios.put(
-				`${import.meta.env.VITE_BASE_URL}/menu/meals`,
+				`/api/v1/menu/meals`,
 				{ mealId },
 				{
 					headers: { Authorization: `Bearer ${cookies.jwt}` }
@@ -106,7 +104,7 @@ const MenuProvider = ({ children }: Children) => {
 			dispatch({
 				type: 'meal/like',
 				payload: {
-					userId: user._id,
+					userId: user._id as string,
 					mealId
 				}
 			});
@@ -128,12 +126,9 @@ const MenuProvider = ({ children }: Children) => {
 		deselectMeal();
 		dispatch({ type: 'loading' });
 		try {
-			await axios.delete(
-				`${import.meta.env.VITE_BASE_URL}/menu/meals/${selectedMeal.mealId}`,
-				{
-					headers: { Authorization: `Bearer ${cookies.jwt}` }
-				}
-			);
+			await axios.delete(`/api/v1/menu/meals/${selectedMeal.mealId}`, {
+				headers: { Authorization: `Bearer ${cookies.jwt}` }
+			});
 			dispatch({ type: 'meal/delete', payload: selectedMeal.mealId });
 		} catch (error) {
 			dispatch({ type: 'error' });

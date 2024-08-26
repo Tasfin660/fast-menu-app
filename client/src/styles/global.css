@@ -9,6 +9,13 @@ body {
 	transition: all 0.3s;
 }
 
+:root[theme='dark'] {
+	body {
+		background: var(--color-gray-dark);
+		transition: all 0.3s;
+	}
+}
+
 .active {
 	color: var(--color-text-dark);
 	background-color: var(--color-secondary) !important;

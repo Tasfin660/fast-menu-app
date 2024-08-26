@@ -89,31 +89,27 @@
 }
 
 /* Header animations */
-.header-message::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	border-left: 15px solid var(--color-text-light);
-	border-right: 15px solid var(--color-text-light);
-	transition: all 0.3s;
-	border-color: var(--theme-color-component-bg);
-}
-
 .header-message::before {
 	content: 'Welcome to the Fast-Menu App. Add your favorite meals to the list and enjoy! 🍕 🍟 🍾';
 	position: absolute;
 	animation: headerMessageAnimation 7s linear infinite;
 }
 
+:root[theme='dark'] {
+	.header-message::before {
+		content: 'Welcome to the Fast-Menu App. Add your favorite meals to the list and enjoy! 🍕 🍟 🍾';
+		position: absolute;
+		animation: headerMessageAnimation 7s linear infinite;
+		color: var(--color-text-light);
+	}
+}
+
 @keyframes headerMessageAnimation {
 	0% {
-		transform: translateX(400px);
+		transform: translateX(450px);
 	}
 
 	100% {
-		transform: translateX(-600px);
+		transform: translateX(-650px);
 	}
 }

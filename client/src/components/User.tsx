@@ -6,8 +6,8 @@ const User = () => {
 	const { user, deleteUser } = useUser();
 	const { username, image, role, joined } = user;
 	return (
-		<div className="flex flex-col justify-center gap-8 border-r-[1px] border-neutral-300/30 bg-neutral-900 px-12">
-			<div className="flex gap-4 rounded-xl bg-neutral-800 p-4 shadow-shadow-menu">
+		<div className="flex flex-col justify-center gap-8 border-r-[1px] border-neutral-300/30 bg-theme-app-bg px-12 dark:bg-cl-gray-dark">
+			<div className="flex gap-4 rounded-xl bg-theme-component-bg p-4 shadow-shadow-menu dark:bg-cl-gray-light dark:text-text-light">
 				<LoadingImage
 					lImgSrc="/user-none-big.png"
 					lImgStyle="size-32"

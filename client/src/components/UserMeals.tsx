@@ -13,12 +13,12 @@ const UserMeals = () => {
 	}, []);
 
 	return (
-		<div className="overflow-hidden border-l-[1px] border-neutral-300/30 bg-neutral-900 p-6">
+		<div className="overflow-hidden border-l-[1px] border-neutral-300/30 p-6">
 			<div className="grid grid-cols-[1fr,max-content,50px] items-center gap-4 pb-4">
-				<h1 className="font-font-secondary text-2xl font-semibold">
+				<h1 className="font-font-secondary text-2xl font-semibold dark:text-text-light">
 					Favourite Meals List
 				</h1>
-				<p className="font-semibold">
+				<p className="font-semibold dark:text-text-light">
 					Total:{' '}
 					<span className="text-primary">
 						{length < 10 ? `0${length}` : `${length}`}
@@ -42,8 +42,12 @@ const UserMeals = () => {
 				{!loading && !error ? (
 					length === 0 ? (
 						<div className="flex flex-col items-center gap-4">
-							<img src="/list.png" alt="item" className="w-16 opacity-10" />
-							<p className="font-medium opacity-40">
+							<img
+								src="/list.png"
+								alt="item"
+								className="w-16 opacity-10 dark:brightness-[6]"
+							/>
+							<p className="font-medium opacity-40 dark:text-text-light">
 								No meals have been added to the list yet.
 							</p>
 						</div>

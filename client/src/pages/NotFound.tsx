@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import AppError from '../common/AppError';
+import AppError from '../components/common/AppError';
 import { useEffect } from 'react';
 
 const NotFound = () => {

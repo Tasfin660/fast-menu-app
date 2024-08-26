@@ -1,4 +1,4 @@
-import AppError from '../common/AppError';
+import AppError from '../components/common/AppError';
 
 const Unauthorized = () => {
 	return (

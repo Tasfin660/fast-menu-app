@@ -20,7 +20,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className="bg-theme-component-bg col-start-2 col-end-3 flex items-center justify-between overflow-hidden rounded-full p-2 pr-4 shadow-shadow-app duration-300">
+		<nav className="dark:bg-cl-gray-neutral col-start-2 col-end-3 flex items-center justify-between overflow-hidden rounded-full bg-theme-component-bg p-2 pr-4 shadow-shadow-app duration-300 dark:text-text-light">
 			<figure className="flex items-center">
 				<LoadingImage
 					lImgSrc="/user-none-big.png"
@@ -58,13 +58,13 @@ const Navbar = () => {
 					<>
 						<Link to="menu/meals/create" className="flex items-center gap-4">
 							<MdOutlineBookmarkAdd
-								className={`box-content rounded-full bg-primary-light px-3 py-1.5 text-xl text-primary duration-300 hover:bg-primary hover:text-text-light ${pathname === '/menu/add' && '!bg-primary text-text-light'}`}
+								className={`dark:bg-cl-gray-light box-content rounded-full bg-primary-light px-3 py-1.5 text-xl text-primary duration-300 hover:bg-primary hover:text-text-light ${pathname === '/menu/add' && '!bg-primary text-text-light'}`}
 							/>
 						</Link>
 						<button onClick={handleLogout}>
 							<Link to="/" className="flex items-center gap-4">
 								<IoLogOut
-									className={`box-content rounded-full bg-primary-light px-3 py-1.5 text-xl text-primary duration-300 hover:bg-primary hover:text-text-light ${(pathname === '/users/login' || pathname === '/users/register') && '!bg-primary text-text-light'}`}
+									className={`dark:bg-cl-gray-light box-content rounded-full bg-primary-light px-3 py-1.5 text-xl text-primary duration-300 hover:bg-primary hover:text-text-light ${(pathname === '/users/login' || pathname === '/users/register') && '!bg-primary text-text-light'}`}
 								/>
 							</Link>
 						</button>
@@ -72,7 +72,7 @@ const Navbar = () => {
 				) : (
 					<Link to="/users/login" className="flex items-center gap-4">
 						<IoLogIn
-							className={`box-content rounded-full bg-primary-light px-3 py-1.5 text-xl text-primary duration-300 hover:bg-primary hover:text-text-light ${(pathname === '/users/login' || pathname === '/users/register') && '!bg-primary text-text-light'}`}
+							className={`dark:bg-cl-gray-light box-content rounded-full bg-primary-light px-3 py-1.5 text-xl text-primary duration-300 hover:bg-primary hover:text-text-light ${(pathname === '/users/login' || pathname === '/users/register') && '!bg-primary text-text-light'}`}
 						/>
 					</Link>
 				)}

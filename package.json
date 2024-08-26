@@ -1,20 +1,31 @@
 {
   "name": "fast-menu-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Fast Menu, A react practice project.",
+  "type": "module",
   "scripts": {
-    "install:client": "cd client && npm install",
+    "start": "cd server && node src/index.js",
+    "build": "cd client && npm run build",
+    "dev": "cd server && npm run dev",
     "install:server": "cd server && npm install",
-    "install": "npm run install:client && npm run install:server",
-    "dev:server": "cd server && npm run dev",
-    "dev:client": "cd client && npm run dev",
-    "dev": "npm run dev:server && npm run dev:client"
+    "install:client": "cd client && npm install",
+    "install": "npm run install:server && npm run install:client"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "client": "^0.0.1"
-  }
+  "keywords": [
+    "fast-menu-app"
+  ],
+  "author": "Tasfin Hasan <tasfinhasan660@gmail.com>",
+  "license": "MIT",
+  "homepage": "hhttps://fast-menu-app-omega.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tasfin660/fast-menu-app"
+  },
+  "bugs": {
+    "url": "https://github.com/Tasfin660/fast-menu-app/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "private": true
 }

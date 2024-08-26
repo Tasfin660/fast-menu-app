@@ -37,11 +37,11 @@ const Header = () => {
 				</span>
 			</div>
 			<div className="flex items-center gap-6">
-				<div className="header-message bg-theme-component-bg relative w-[400px] overflow-hidden text-nowrap rounded-full pb-1.5 pt-2 text-sm font-medium shadow-shadow-app duration-300">
+				<div className="header-message dark:bg-cl-gray-neutral relative w-[400px] overflow-hidden text-nowrap rounded-full bg-theme-component-bg pb-1.5 pt-2 text-sm font-medium shadow-shadow-app duration-300">
 					&nbsp;
 				</div>
 				{category && (
-					<p className="bg-theme-component-bg rounded-full px-4 pb-1.5 pt-2 text-sm font-medium text-primary shadow-shadow-app duration-300">
+					<p className="dark:bg-cl-gray-neutral rounded-full bg-theme-component-bg px-4 pb-1.5 pt-2 text-sm font-medium text-primary shadow-shadow-app duration-300">
 						Results: {length < 10 ? `0${length}` : `${length}`}
 					</p>
 				)}

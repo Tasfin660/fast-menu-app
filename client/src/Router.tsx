@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
-import Auth from './components/pages/Auth';
-import CreateMeal from './components/pages/CreateMeal';
-import Home from './components/pages/Home';
-import Menu from './components/pages/Menu';
-import NotFound from './components/pages/NotFound';
-import Unauthorized from './components/pages/Unauthorized';
+import Auth from './pages/Auth';
+import CreateMeal from './pages/CreateMeal';
+import Home from './pages/Home';
+import Menu from './pages/Menu';
+import NotFound from './pages/NotFound';
+import Unauthorized from './pages/Unauthorized';
 
 const Router = () => {
 	return (

@@ -10,7 +10,7 @@ import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
 	return (
-		<footer className="bg-theme-component-bg col-span-2 mt-2 flex justify-between rounded-full px-6 py-3 shadow-shadow-app duration-300">
+		<footer className="dark:bg-cl-gray-neutral col-span-2 mt-2 flex justify-between rounded-full bg-theme-component-bg px-6 py-3 shadow-shadow-app duration-300 dark:text-text-light">
 			<div className="flex items-center gap-8">
 				<SocialLink link="https://facebook.com/Tasfin660" Icon={FaFacebookF} />
 				<SocialLink link="#" Icon={FaLinkedinIn} />

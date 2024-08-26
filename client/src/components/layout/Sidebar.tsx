@@ -13,7 +13,7 @@ import HeadingPrimary from '../common/HeadingPrimary';
 
 const Sidebar = () => {
 	return (
-		<nav className="row-span-3 w-[300px] rounded-2xl bg-primary-gradient py-8 text-text-light shadow-shadow-primary">
+		<nav className="row-span-3 w-[300px] rounded-2xl bg-primary-gradient py-8 text-text-light shadow-shadow-primary dark:shadow-none">
 			<Link to="/" className="mb-4 flex flex-col items-center gap-2">
 				<img src="/logo.png" alt="logo" className="w-16" />
 				<HeadingPrimary context="Fast-Menu" />

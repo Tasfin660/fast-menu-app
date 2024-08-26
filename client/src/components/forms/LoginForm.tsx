@@ -42,7 +42,7 @@ const LoginForm = () => {
 					placeholder="Username"
 					autoComplete="off"
 					{...registerInput('username')}
-					className="w-80 rounded-full border-[1px] border-transparent bg-neutral-100 py-2 pl-4 pr-10 shadow-shadow-app outline-none duration-300 hover:bg-neutral-50 focus:border-primary"
+					className="w-80 rounded-full border-[1px] border-transparent bg-neutral-100 py-2 pl-4 pr-10 shadow-shadow-app outline-none duration-300 hover:bg-neutral-50 focus:border-primary dark:bg-cl-gray-neutral dark:text-text-light dark:hover:bg-cl-gray-neutral"
 				/>
 				<FaUser className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-neutral-300" />
 			</div>
@@ -52,7 +52,7 @@ const LoginForm = () => {
 					placeholder="Password"
 					autoComplete="off"
 					{...registerInput('password')}
-					className="w-80 rounded-full border-[1px] border-transparent bg-neutral-100 py-2 pl-4 pr-10 shadow-shadow-app outline-none duration-300 hover:bg-neutral-50 focus:border-primary"
+					className="w-80 rounded-full border-[1px] border-transparent bg-neutral-100 py-2 pl-4 pr-10 shadow-shadow-app outline-none duration-300 hover:bg-neutral-50 focus:border-primary dark:bg-cl-gray-neutral dark:text-text-light dark:hover:bg-cl-gray-neutral"
 				/>
 				<FaLock className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-neutral-300" />
 			</div>
