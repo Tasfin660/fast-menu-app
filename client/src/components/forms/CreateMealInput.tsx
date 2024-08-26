@@ -43,7 +43,7 @@ const SelectCategory = ({ reg }: { reg: UseFormRegister<Meal> }) => {
 			<option value="fried-chicken">Fried Chicken</option>
 			<option value="french-fries">French Fries</option>
 			<option value="burger">Burger</option>
-			<option value="sausage">Sausage</option>
+			<option value="kebab">Kebab</option>
 			<option value="hotdog">Hotdog</option>
 			<option value="pizza">Pizza</option>
 			<option value="taco">Taco</option>

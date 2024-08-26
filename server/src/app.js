@@ -3,9 +3,6 @@ import connectDB, { dbConnected } from '../config/db.js';
 import menuRouter from './routes/menuRoutes.js';
 import userRouter from './routes/userRoutes.js';
 import vite from '../config/vite.js';
-import dotenv from 'dotenv';
-
-dotenv.config({ path: '.env' });
 
 const app = express();
 

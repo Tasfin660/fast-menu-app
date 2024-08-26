@@ -1,12 +1,7 @@
 import { IconType } from 'react-icons';
 import { FaHamburger, FaPizzaSlice } from 'react-icons/fa';
-import {
-	GiChickenLeg,
-	GiFrenchFries,
-	GiHotDog,
-	GiSausage,
-	GiTacos
-} from 'react-icons/gi';
+import { GiChickenLeg, GiFrenchFries, GiHotDog, GiTacos } from 'react-icons/gi';
+import { MdKebabDining } from 'react-icons/md';
 import { RiDrinks2Fill } from 'react-icons/ri';
 import { Link, NavLink } from 'react-router-dom';
 import HeadingPrimary from '../common/HeadingPrimary';
@@ -22,7 +17,7 @@ const Sidebar = () => {
 				<MenuLink link="fried-chicken" Icon={GiChickenLeg} />
 				<MenuLink link="french-fries" Icon={GiFrenchFries} />
 				<MenuLink link="burger" Icon={FaHamburger} />
-				<MenuLink link="sausage" Icon={GiSausage} />
+				<MenuLink link="kebab" Icon={MdKebabDining} />
 				<MenuLink link="hotdog" Icon={GiHotDog} />
 				<MenuLink link="pizza" Icon={FaPizzaSlice} />
 				<MenuLink link="taco" Icon={GiTacos} />

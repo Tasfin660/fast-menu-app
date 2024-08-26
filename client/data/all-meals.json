@@ -61,7 +61,7 @@
 		"image": "",
 		"price": 3,
 		"tag": "",
-		"category": "sausage",
+		"category": "kebab",
 		"poeple": [
 			{
 				"$oid": ""

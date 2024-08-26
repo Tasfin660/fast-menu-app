@@ -15,7 +15,7 @@ const CreateMeal = () => {
 	return (
 		<div className="my-6 grid grid-cols-2 gap-16">
 			<CreateMealForm />
-			<div className="flex flex-col gap-1 pl-3">
+			<div className="flex flex-col gap-2 pl-3">
 				<h1 className="col-span-2 -ml-3 mb-4 font-font-secondary text-2xl font-semibold dark:text-text-light">
 					Meal Adding Tips
 				</h1>
