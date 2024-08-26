@@ -25,8 +25,8 @@ globalThis.setTheme = (theme = undefined) => {
 
 	const root = globalThis.document.querySelector(':root');
 
-	if (theme === 'light') root.setAttribute('theme', 'light');
-	else if (theme === 'dark') root.setAttribute('theme', 'dark');
+	if (theme === 'light') root?.setAttribute('theme', 'light');
+	else if (theme === 'dark') root?.setAttribute('theme', 'dark');
 };
 
 globalThis.setTheme();
