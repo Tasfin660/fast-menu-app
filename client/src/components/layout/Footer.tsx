@@ -10,7 +10,7 @@ import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
 	return (
-		<footer className="dark:bg-cl-gray-neutral col-span-2 mt-2 flex justify-between rounded-full bg-theme-component-bg px-6 py-3 shadow-shadow-app duration-300 dark:text-text-light">
+		<footer className="col-span-2 mt-2 flex justify-between rounded-full bg-theme-component-bg px-6 py-3 shadow-shadow-app duration-300 dark:bg-cl-gray-neutral dark:text-text-light">
 			<div className="flex items-center gap-8">
 				<SocialLink link="https://facebook.com/Tasfin660" Icon={FaFacebookF} />
 				<SocialLink link="#" Icon={FaLinkedinIn} />
@@ -20,7 +20,7 @@ const Footer = () => {
 					link="https://discord.com/users/513693207880663040"
 					Icon={FaDiscord}
 				/>
-				<SocialLink link="fast-menu-app.vercel.app" Icon={FaLink} />
+				<SocialLink link="https://fast-menu-app-two.vercel.app" Icon={FaLink} />
 			</div>
 			<p className="font-medium">
 				Copyright &copy; Tasfin Hasan | Fast Menu App {new Date().getFullYear()}
